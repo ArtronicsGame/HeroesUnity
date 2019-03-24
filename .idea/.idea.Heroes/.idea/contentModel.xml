@@ -21,9 +21,10 @@
             <e p="MatchHandler.cs" t="Include" />
           </e>
           <e p="Network" t="Include">
+            <e p="MainTCPConnection.cs" t="Include" />
+            <e p="MatchTCPConnection.cs" t="Include" />
             <e p="MessageHandler.cs" t="Include" />
             <e p="ResponseAnalyzer.cs" t="Include" />
-            <e p="TCPConnection.cs" t="Include" />
             <e p="UDPConnection.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">

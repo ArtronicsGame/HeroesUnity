@@ -10,7 +10,7 @@ using UnityEditor;
 using UnityEngine;
 using Event = EventSystem.Model.Event;
 
-public class TCPConnection : MonoBehaviour
+public class MainTCPConnection : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -89,17 +89,11 @@ public class TCPConnection : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnDestroy()
     {
         if(_readThread != null && _readThread.IsAlive)
         _readThread.Abort();
-        if(_client.Connected)
+        if(_client != null && _client.Connected)
             _client.Close();
     }
 }

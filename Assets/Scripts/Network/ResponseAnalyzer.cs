@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using Utils;
 using Event = EventSystem.Model.Event;
@@ -12,7 +13,8 @@ public class ResponseAnalyzer : MonoBehaviour
 {
     public DictionaryOfGameObjects map = new DictionaryOfGameObjects();
     
-    public void Analyze(Event response)
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public bool Analyze(Event response)
     {
         if (map.ContainsKey(response.Type))
         {
@@ -21,7 +23,10 @@ public class ResponseAnalyzer : MonoBehaviour
         }
         else
         {
-            Debug.Log("Unknown Type Of Response");
+            Debug.Log("Unknown Type Of Response\n" + response.Type);
+            return false;
         }
+
+        return true;
     }
 }
