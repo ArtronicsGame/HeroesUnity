@@ -9,6 +9,7 @@ public class MatchHandler : EventBehaviour
 
     private MainTCPConnection _mainTcp;
     private MatchTCPConnection _matchTcp;
+    private UDPConnection _matchUdp;
     private MessageHandler _messageHandler;
 
     void Start()
@@ -20,6 +21,7 @@ public class MatchHandler : EventBehaviour
         }
 
         _matchTcp = GetComponent<MatchTCPConnection>();
+        _matchUdp = GetComponent<UDPConnection>();
     }
 
     new void Update()
@@ -36,8 +38,10 @@ public class MatchHandler : EventBehaviour
                 {
                     Debug.Log("We Have Match Port");
                     _matchTcp.ConnectMatchServer(int.Parse(e.Info["matchPort"]));
+                    _matchUdp.Connect(int.Parse(e.Info["matchPort"]));
                     matchId = e.Info["matchId"];
                     _messageHandler.TCPHandshake("4", matchId);
+                    _messageHandler.UDPHandshake("4", matchId);
                 }
 
                 break;

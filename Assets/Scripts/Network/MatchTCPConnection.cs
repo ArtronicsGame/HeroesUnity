@@ -13,8 +13,7 @@ using Event = EventSystem.Model.Event;
 
 public class MatchTCPConnection : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+    
     public string IPAddress = "5.253.27.99";
     public int Port = 40123;
 
@@ -32,7 +31,6 @@ public class MatchTCPConnection : MonoBehaviour
     void TcpReader()
     {
         try { 			
-            Byte[] bytes = new Byte[1024];             
             using(StreamReader reader = new StreamReader(_client.GetStream(), Encoding.UTF8)) {
                 string line;
                 while((line = reader.ReadLine()) != null) {
@@ -64,6 +62,7 @@ public class MatchTCPConnection : MonoBehaviour
     {
         _client = new TcpClient(IPAddress, port);
         _readThread = new Thread(TcpReader);
+        _readThread.IsBackground = true;
         _readThread.Start();
     }
     

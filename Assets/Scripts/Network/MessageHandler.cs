@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using Newtonsoft.Json;
 using UnityEngine;
 using Event = EventSystem.Model.Event;
@@ -9,6 +10,7 @@ public class MessageHandler : MonoBehaviour
 
     private MainTCPConnection _mainTcp;
     private MatchTCPConnection _matchTcp;
+    private UDPConnection _matchUdp;
     
     void Start()
     {
@@ -16,8 +18,12 @@ public class MessageHandler : MonoBehaviour
 
         GameObject matchHandler = GameObject.Find("MatchHandler");
         Debug.Log(matchHandler);
-        if(matchHandler != null)
+        if (matchHandler != null)
+        {
             _matchTcp = matchHandler.GetComponent<MatchTCPConnection>();
+            _matchUdp = matchHandler.GetComponent<UDPConnection>();
+        }
+
         NewMatch();
     }
 
@@ -54,5 +60,17 @@ public class MessageHandler : MonoBehaviour
             {"matchId", matchId}
         };
         return _matchTcp.SendData(JsonConvert.SerializeObject(e));
+    }
+    
+    public bool UDPHandshake(string id, string matchId)
+    {
+        Event e = new Event();
+        e.Type = "MatchController.udpHandshake";
+        e.Info = new Dictionary<string, string>()
+        {
+            {"id", id},
+            {"matchId", matchId}
+        };
+        return _matchUdp.SendData(JsonConvert.SerializeObject(e));
     }
 }

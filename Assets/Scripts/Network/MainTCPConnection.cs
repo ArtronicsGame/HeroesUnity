@@ -43,6 +43,7 @@ public class MainTCPConnection : MonoBehaviour
         Port = GetNewPort();
         _client = new TcpClient(IPAddress, Port);
         _readThread = new Thread(TcpReader);
+        _readThread.IsBackground = true;
         _readThread.Start();
         GetComponentInChildren<MessageHandler>().enabled = true;
     }
