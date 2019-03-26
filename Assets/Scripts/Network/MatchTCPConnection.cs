@@ -60,7 +60,8 @@ public class MatchTCPConnection : MonoBehaviour
 
     public void ConnectMatchServer(int port)
     {
-        _client = new TcpClient(IPAddress, port);
+        Port = port;
+        _client = new TcpClient(IPAddress, Port);
         _readThread = new Thread(TcpReader);
         _readThread.IsBackground = true;
         _readThread.Start();
@@ -84,41 +85,40 @@ public class MatchTCPConnection : MonoBehaviour
         
     }
     
-    public bool SendInitialData(string text)
+    public void SendInitialData(string text)
     {
-        if(_client == null || !_client.Connected)
-            _client = new TcpClient(IPAddress, Port);
-        try
+        new Thread((() =>
         {
-            Byte[] data =
-                System.Text.Encoding.ASCII.GetBytes(text);
+            if(_client == null || !_client.Connected)
+                _client = new TcpClient(IPAddress, Port);
+            try
+            {
+                Byte[] data =
+                    System.Text.Encoding.ASCII.GetBytes(text);
             
-            Byte[] bytes = new Byte[1024];             
-            using (NetworkStream stream = _client.GetStream()) { 
-                int length; 	
-                stream.Write(data, 0, data.Length);
-                while ((length = stream.Read(bytes, 0, bytes.Length)) != 0) { 						
-                    var incomingData = new byte[length]; 						
-                    Array.Copy(bytes, 0, incomingData, 0, length); 	
+                Byte[] bytes = new Byte[1024];             
+                using (NetworkStream stream = _client.GetStream()) { 
+                    int length; 	
+                    stream.Write(data, 0, data.Length);
+                    while ((length = stream.Read(bytes, 0, bytes.Length)) != 0) { 						
+                        var incomingData = new byte[length]; 						
+                        Array.Copy(bytes, 0, incomingData, 0, length); 	
                         
-                    string message = System.Text.Encoding.ASCII.GetString(incomingData); 
-                    Event response = JsonConvert.DeserializeObject<Event>(message);
+                        string message = System.Text.Encoding.ASCII.GetString(incomingData); 
+                        Event response = JsonConvert.DeserializeObject<Event>(message);
                     
-                    _client.Close();
-                    _client.Dispose();
-                    if (!_responseAnalyzer.Analyze(response))
-                        return false;
-                    break;
-                } 				
-            } 
-            return true;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return false;
-        }
-        
+                        _client.Close();
+                        _client.Dispose();
+                        if (_responseAnalyzer.Analyze(response))
+                            break;
+                    } 				
+                } 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        })).Start();
     }
 
     private void OnDestroy()

@@ -8,6 +8,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
+          <e p="PrefabMapEditor.cs" t="Include" />
           <e p="ResponseAnalyzerEditor.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
@@ -16,6 +17,10 @@
             <e p="Model" t="Include">
               <e p="Event.cs" t="Include" />
             </e>
+          </e>
+          <e p="MapCreator" t="Include">
+            <e p="Creator.cs" t="Include" />
+            <e p="PrefabMap.cs" t="Include" />
           </e>
           <e p="MatchHandler" t="Include">
             <e p="MatchHandler.cs" t="Include" />

@@ -40,12 +40,16 @@ public class MainTCPConnection : MonoBehaviour
     void Start()
     {
         _responseAnalyzer = GetComponentInChildren<ResponseAnalyzer>();
+        new Thread(Bootstrap).Start();
+    }
+
+    void Bootstrap()
+    {
         Port = GetNewPort();
         _client = new TcpClient(IPAddress, Port);
         _readThread = new Thread(TcpReader);
         _readThread.IsBackground = true;
         _readThread.Start();
-        GetComponentInChildren<MessageHandler>().enabled = true;
     }
 
     void TcpReader()
