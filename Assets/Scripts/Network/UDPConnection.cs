@@ -52,7 +52,8 @@ public class UDPConnection : MonoBehaviour
                 {
                     {"X", slice[0]},
                     {"Y", slice[1]},
-                    {"Angle", slice[2]}
+                    {"Angle", slice[2]},
+                    {"Id", slice[3]}
                 };
                 _responseAnalyzer.Analyze(e);
             }

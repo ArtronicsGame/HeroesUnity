@@ -7,6 +7,7 @@ using Event = EventSystem.Model.Event;
 public class Creator : EventBehaviour
 {
     public PrefabMap prefabMap;
+    
     new void Update()
     {
         base.Update();
@@ -22,6 +23,7 @@ public class Creator : EventBehaviour
                 Quaternion angle = Quaternion.Euler(0, 0, Mathf.Rad2Deg * float.Parse(e.Info["Angle"]));
                 GameObject element = Instantiate(gameObjectDef, pos, angle);
                 element.transform.parent = gameObject.transform;
+                element.name = e.Info["elemName"];
                 break;
         }
     }

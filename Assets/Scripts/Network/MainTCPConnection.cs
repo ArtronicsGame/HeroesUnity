@@ -64,9 +64,16 @@ public class MainTCPConnection : MonoBehaviour
                         var incomingData = new byte[length]; 						
                         Array.Copy(bytes, 0, incomingData, 0, length); 	
                         
-                        string message = System.Text.Encoding.ASCII.GetString(incomingData); 
-                        Event response = JsonConvert.DeserializeObject<Event>(message);
-                        _responseAnalyzer.Analyze(response);
+                        string message = System.Text.Encoding.ASCII.GetString(incomingData);
+                        try
+                        {
+                            Event response = JsonConvert.DeserializeObject<Event>(message);
+                            _responseAnalyzer.Analyze(response);
+                        }
+                        catch (Exception)
+                        {
+                            Debug.Log("Non-JSON Message: " + message);
+                        }
                     } 				
                 } 			
             }         

@@ -46,7 +46,13 @@ public class MatchHandler : EventBehaviour
 
                 break;
             case "MatchUpdate":
-                GameObject crate = GameObject.Find("Crate");
+                GameObject crate = GameObject.Find(e.Info["Id"]);
+                if (crate == null)
+                {
+                    Debug.Log("Object " + e.Info["Id"] + " Not Found");
+                    return;
+                }
+
                 crate.transform.position = new Vector2(float.Parse(e.Info["X"]), float.Parse(e.Info["Y"]));
                 crate.transform.eulerAngles = new Vector3(0f, 0f, Mathf.Rad2Deg * float.Parse(e.Info["Angle"]));
                 break;

@@ -13,49 +13,45 @@ using Event = EventSystem.Model.Event;
 
 public class MatchTCPConnection : MonoBehaviour
 {
-    
     public string IPAddress = "5.253.27.99";
     public int Port = 40123;
 
     private TcpClient _client;
     private Thread _readThread;
     private ResponseAnalyzer _responseAnalyzer;
-    
+
     void Start()
     {
         GameObject connectionManager = GameObject.Find("ConnectionManager");
-        if(connectionManager != null)
+        if (connectionManager != null)
             _responseAnalyzer = connectionManager.GetComponentInChildren<ResponseAnalyzer>();
     }
 
     void TcpReader()
     {
-        try { 			
-            using(StreamReader reader = new StreamReader(_client.GetStream(), Encoding.UTF8)) {
+        try
+        {
+            using (StreamReader reader = new StreamReader(_client.GetStream(), Encoding.UTF8))
+            {
                 string line;
-                while((line = reader.ReadLine()) != null) {
-                    if (line.Contains(";"))
+                while ((line = reader.ReadLine()) != null)
+                {
+                    try
                     {
-                        Event e = new Event {Type = "MatchUpdate"};
-                        string[] slice = line.Split(';');
-                        e.Info = new Dictionary<string, string>()
-                        {
-                            {"X", slice[0]},
-                            {"Y", slice[1]},
-                            {"Angle", slice[2]}
-                        };
-                        _responseAnalyzer.Analyze(e);
+                        Event response = JsonConvert.DeserializeObject<Event>(line);
+                        _responseAnalyzer.Analyze(response);
                     }
-                    else
+                    catch (Exception)
                     {
-                        Debug.Log(line);
+                        Debug.Log("Non-JSON Message: " + line);
                     }
                 }
             }
-        }         
-        catch (SocketException socketException) {             
-            Debug.Log("Socket exception: " + socketException);         
-        }     
+        }
+        catch (SocketException socketException)
+        {
+            Debug.Log("Socket exception: " + socketException);
+        }
     }
 
     public void ConnectMatchServer(int port)
@@ -66,7 +62,7 @@ public class MatchTCPConnection : MonoBehaviour
         _readThread.IsBackground = true;
         _readThread.Start();
     }
-    
+
     public bool SendData(string text)
     {
         try
@@ -82,37 +78,38 @@ public class MatchTCPConnection : MonoBehaviour
             Console.WriteLine(e);
             return false;
         }
-        
     }
-    
+
     public void SendInitialData(string text)
     {
         new Thread((() =>
         {
-            if(_client == null || !_client.Connected)
+            if (_client == null || !_client.Connected)
                 _client = new TcpClient(IPAddress, Port);
             try
             {
                 Byte[] data =
                     System.Text.Encoding.ASCII.GetBytes(text);
-            
-                Byte[] bytes = new Byte[1024];             
-                using (NetworkStream stream = _client.GetStream()) { 
-                    int length; 	
+
+                Byte[] bytes = new Byte[1024];
+                using (NetworkStream stream = _client.GetStream())
+                {
+                    int length;
                     stream.Write(data, 0, data.Length);
-                    while ((length = stream.Read(bytes, 0, bytes.Length)) != 0) { 						
-                        var incomingData = new byte[length]; 						
-                        Array.Copy(bytes, 0, incomingData, 0, length); 	
-                        
-                        string message = System.Text.Encoding.ASCII.GetString(incomingData); 
+                    while ((length = stream.Read(bytes, 0, bytes.Length)) != 0)
+                    {
+                        var incomingData = new byte[length];
+                        Array.Copy(bytes, 0, incomingData, 0, length);
+
+                        string message = System.Text.Encoding.ASCII.GetString(incomingData);
                         Event response = JsonConvert.DeserializeObject<Event>(message);
-                    
+
                         _client.Close();
                         _client.Dispose();
                         if (_responseAnalyzer.Analyze(response))
                             break;
-                    } 				
-                } 
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -123,9 +120,9 @@ public class MatchTCPConnection : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(_readThread != null && _readThread.IsAlive)
-        _readThread.Abort();
-        if(_client != null && _client.Connected)
+        if (_readThread != null && _readThread.IsAlive)
+            _readThread.Abort();
+        if (_client != null && _client.Connected)
             _client.Close();
     }
 }
