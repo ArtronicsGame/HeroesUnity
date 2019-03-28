@@ -13,12 +13,22 @@ public abstract class EventBehaviour : MonoBehaviour
         _events.Enqueue(e);
     }
 
-    public void Update()
+    public void  Start()
     {
-        Event e;
-        if (_events.TryDequeue(out e))
+        StartCoroutine(QueueCheck());
+    }
+
+    IEnumerator QueueCheck()
+    {
+        while (true)
         {
-            OnEvent(e);
+            Event e;
+            while (_events.TryDequeue(out e))
+            {
+                OnEvent(e);
+            }
+            
+            yield return new WaitForSeconds(0.005f);
         }
     }
 

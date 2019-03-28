@@ -8,9 +8,9 @@ public class Creator : EventBehaviour
 {
     public PrefabMap prefabMap;
     
-    new void Update()
+    new void Start()
     {
-        base.Update();
+        base.Start();
     }
 
     protected override void OnEvent(Event e)

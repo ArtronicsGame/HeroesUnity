@@ -1,27 +1,29 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using EventSystem.Model;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using Event = EventSystem.Model.Event;
 
 public class UDPConnection : MonoBehaviour
 {
     public string IPAddress = "5.253.27.99";
     public int Port;
-    
+
     private UdpClient _client;
     private Thread _readThread;
     private ResponseAnalyzer _responseAnalyzer;
-    
+
     void Start()
     {
         GameObject connectionManager = GameObject.Find("ConnectionManager");
-        if(connectionManager != null)
+        if (connectionManager != null)
             _responseAnalyzer = connectionManager.GetComponentInChildren<ResponseAnalyzer>();
     }
 
@@ -42,28 +44,33 @@ public class UDPConnection : MonoBehaviour
 
             // Blocks until a message returns on this socket from a remote host.
             Byte[] receiveBytes = _client.Receive(ref remoteIpEndPoint);
-            string line = Encoding.ASCII.GetString(receiveBytes);
-
-            if (line.Contains(";"))
+            string data = Encoding.ASCII.GetString(receiveBytes);
+            string[] lines = data.Split(':');
+            
+            foreach (string line in lines)
             {
-                Event e = new Event {Type = "MatchUpdate"};
-                string[] slice = line.Split(';');
-                e.Info = new Dictionary<string, string>()
+                if (line.Contains(";"))
                 {
-                    {"X", slice[0]},
-                    {"Y", slice[1]},
-                    {"Angle", slice[2]},
-                    {"Id", slice[3]}
-                };
-                _responseAnalyzer.Analyze(e);
+                    Event e = new Event {Type = "MatchUpdate"};
+                    string[] slice = line.Split(';');
+                    e.Info = new Dictionary<string, string>()
+                    {
+                        {"X", slice[0]},
+                        {"Y", slice[1]},
+                        {"Angle", slice[2]},
+                        {"Id", slice[3]}
+                    };
+                    _responseAnalyzer.Analyze(e);
+                }
+                else
+                {
+                    Debug.Log(line);
+                }
             }
-            else
-            {
-                Debug.Log(line);
-            }
+
         }
     }
-    
+
     public bool SendData(string text)
     {
         try
@@ -78,7 +85,6 @@ public class UDPConnection : MonoBehaviour
             Console.WriteLine(e);
             return false;
         }
-        
     }
 
     void OnDestroy()

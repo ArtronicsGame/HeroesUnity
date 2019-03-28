@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 9c187dc83c080e74595739d84036d53d
+labels:
+- Terrain
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

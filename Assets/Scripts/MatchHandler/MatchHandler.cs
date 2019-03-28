@@ -12,8 +12,9 @@ public class MatchHandler : EventBehaviour
     private UDPConnection _matchUdp;
     private MessageHandler _messageHandler;
 
-    void Start()
+    new void Start()
     {
+        base.Start();
         GameObject connectionManager = GameObject.Find("ConnectionManager");
         if (connectionManager != null)
         {
@@ -23,12 +24,8 @@ public class MatchHandler : EventBehaviour
         _matchTcp = GetComponent<MatchTCPConnection>();
         _matchUdp = GetComponent<UDPConnection>();
     }
-
-    new void Update()
-    {
-        base.Update();
-    }
-
+    
+    private float lastT;
     protected override void OnEvent(Event e)
     {
         switch (e.Type)
@@ -46,15 +43,14 @@ public class MatchHandler : EventBehaviour
 
                 break;
             case "MatchUpdate":
-                GameObject crate = GameObject.Find(e.Info["Id"]);
-                if (crate == null)
+                GameObject o = GameObject.Find(e.Info["Id"]);
+                if (o == null)
                 {
                     Debug.Log("Object " + e.Info["Id"] + " Not Found");
                     return;
                 }
 
-                crate.transform.position = new Vector2(float.Parse(e.Info["X"]), float.Parse(e.Info["Y"]));
-                crate.transform.eulerAngles = new Vector3(0f, 0f, Mathf.Rad2Deg * float.Parse(e.Info["Angle"]));
+                o.GetComponent<NetworkDriven>().SetTarget(float.Parse(e.Info["X"]), float.Parse(e.Info["Y"]), Mathf.Rad2Deg * float.Parse(e.Info["Angle"]));
                 break;
         }
     }

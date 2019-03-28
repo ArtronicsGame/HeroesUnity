@@ -6,6 +6,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 using UnityEditor;
 using UnityEngine;
 using Event = EventSystem.Model.Event;

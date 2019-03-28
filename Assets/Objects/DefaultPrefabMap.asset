@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e1faa81c224237a7fad877c380c136, type: 3}
   m_Name: DefaultPrefabMap
   m_EditorClassIdentifier: 
+  prefabsMap:
+    keys:
+    - Crate
+    - Ground
+    values:
+    - {fileID: 4958917668544149011, guid: 6fa0018c69d13ba4ea02c16a6d0bbb73, type: 3}
+    - {fileID: 2741673766595820466, guid: 02282e604637f4d4f885591f24a4a627, type: 3}

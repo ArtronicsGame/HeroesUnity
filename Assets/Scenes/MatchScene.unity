@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 195348372}
   - component: {fileID: 195348373}
+  - component: {fileID: 195348374}
   m_Layer: 0
   m_Name: GameElements
   m_TagString: Untagged
@@ -202,6 +203,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabMap: {fileID: 11400000, guid: 9c187dc83c080e74595739d84036d53d, type: 2}
+--- !u!114 &195348374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195348371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6b16c8920d7374ca0176945c741c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: {x: 0, y: -10}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +268,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
