@@ -44,6 +44,8 @@ public class Exporter : MonoBehaviour
         streamWriter.Write(mapData);
         streamWriter.Close();
         
+        #if UNITY_EDITOR
         AssetDatabase.ImportAsset("Assets/Maps/" + fileName + ".txt");
+        #endif
     }
 }

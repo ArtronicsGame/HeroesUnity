@@ -6,6 +6,7 @@ using Event = EventSystem.Model.Event;
 
 public class Creator : EventBehaviour
 {
+    public PlayerInfo playerInfo;
     public PrefabMap prefabMap;
     
     new void Start()
@@ -24,6 +25,10 @@ public class Creator : EventBehaviour
                 GameObject element = Instantiate(gameObjectDef, pos, angle);
                 element.transform.parent = gameObject.transform;
                 element.name = e.Info["elemName"];
+                if (element.name == playerInfo.HeroName)
+                {
+                    Camera.main.GetComponent<MatchCamera>().target = element;
+                }
                 break;
         }
     }

@@ -5,8 +5,8 @@ using Event = EventSystem.Model.Event;
 
 public class MatchHandler : EventBehaviour
 {
-    public string matchId = "Not Connected";
-
+    public PlayerInfo PlayerInfo;
+    
     private MainTCPConnection _mainTcp;
     private MatchTCPConnection _matchTcp;
     private UDPConnection _matchUdp;
@@ -24,22 +24,21 @@ public class MatchHandler : EventBehaviour
         _matchTcp = GetComponent<MatchTCPConnection>();
         _matchUdp = GetComponent<UDPConnection>();
     }
-    
+
     private float lastT;
+
     protected override void OnEvent(Event e)
     {
         switch (e.Type)
         {
             case "MatchPlace":
-                if (e.Info.ContainsKey("matchPort"))
-                {
-                    Debug.Log("We Have Match Port");
-                    _matchTcp.ConnectMatchServer(int.Parse(e.Info["matchPort"]));
-                    _matchUdp.Connect(int.Parse(e.Info["matchPort"]));
-                    matchId = e.Info["matchId"];
-                    _messageHandler.TCPHandshake("4", matchId);
-                    _messageHandler.UDPHandshake("4", matchId);
-                }
+                Debug.Log("We Have Match Port");
+                _matchTcp.ConnectMatchServer(int.Parse(e.Info["matchPort"]));
+                _matchUdp.Connect(int.Parse(e.Info["matchPort"]));
+                PlayerInfo.MatchID = e.Info["matchId"];
+                PlayerInfo.MatchPlayerID = e.Info["fakeId"];
+                _messageHandler.TCPHandshake();
+                _messageHandler.UDPHandshake();
 
                 break;
             case "MatchUpdate":
@@ -50,7 +49,17 @@ public class MatchHandler : EventBehaviour
                     return;
                 }
 
-                o.GetComponent<NetworkDriven>().SetTarget(float.Parse(e.Info["X"]), float.Parse(e.Info["Y"]), Mathf.Rad2Deg * float.Parse(e.Info["Angle"]));
+                o.GetComponent<NetworkDriven>().SetTarget(float.Parse(e.Info["X"]), float.Parse(e.Info["Y"]),
+                    Mathf.Rad2Deg * float.Parse(e.Info["Angle"]));
+                break;
+            case "MatchStart":
+                
+                break;
+            case "HeroID":
+                if (PlayerInfo.ID == e.Info["ID"])
+                {
+                    PlayerInfo.HeroName = e.Info["HeroID"];
+                }
                 break;
         }
     }

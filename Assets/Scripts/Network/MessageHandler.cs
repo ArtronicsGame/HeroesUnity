@@ -7,7 +7,9 @@ using Event = EventSystem.Model.Event;
 
 public class MessageHandler : MonoBehaviour
 {
-
+    public PlayerInfo playerInfo;
+    public MovementData movementData;
+    
     private MainTCPConnection _mainTcp;
     private MatchTCPConnection _matchTcp;
     private UDPConnection _matchUdp;
@@ -25,6 +27,20 @@ public class MessageHandler : MonoBehaviour
         }
 
         NewMatch();
+    }
+
+    private bool moving = false;
+    void Update()
+    {
+        if (movementData.speed != 0)
+        {
+            moving = true;
+            SendLocation();
+        }else if (moving)
+        {
+            moving = false;
+            SendLocation();
+        }
     }
 
     public bool NewPlayer(string username)
@@ -45,31 +61,45 @@ public class MessageHandler : MonoBehaviour
         e.Type = "New";
         e.Info = new Dictionary<string, string>()
         {
-            {"id", "4"}
+            {"id", playerInfo.ID}
         };
         _matchTcp.SendInitialData(JsonConvert.SerializeObject(e));
     }
+
+    public bool SendLocation()
+    {
+        Event e = new Event();
+        e.Type = "HeroMove";
+        e.Info = new Dictionary<string, string>()
+        {
+            {"id", playerInfo.MatchPlayerID},
+            {"speed", movementData.speed.ToString()},
+            {"x", movementData.direction.x.ToString()},
+            {"y", movementData.direction.y.ToString()}
+        };
+        return _matchTcp.SendData(JsonConvert.SerializeObject(e) + "\n");
+    }
     
-    public bool TCPHandshake(string id, string matchId)
+    public bool TCPHandshake()
     {
         Event e = new Event();
         e.Type = "MatchController.tcpHandshake";
         e.Info = new Dictionary<string, string>()
         {
-            {"id", id},
-            {"matchId", matchId}
+            {"id", playerInfo.ID},
+            {"matchId", playerInfo.MatchID}
         };
         return _matchTcp.SendData(JsonConvert.SerializeObject(e));
     }
     
-    public bool UDPHandshake(string id, string matchId)
+    public bool UDPHandshake()
     {
         Event e = new Event();
         e.Type = "MatchController.udpHandshake";
         e.Info = new Dictionary<string, string>()
         {
-            {"id", id},
-            {"matchId", matchId}
+            {"id", playerInfo.ID},
+            {"matchId", playerInfo.MatchID}
         };
         return _matchUdp.SendData(JsonConvert.SerializeObject(e));
     }

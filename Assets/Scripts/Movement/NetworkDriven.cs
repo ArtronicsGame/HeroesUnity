@@ -17,8 +17,8 @@ public class NetworkDriven : MonoBehaviour
 
     public void SetTarget(float x, float y, float angle)
     {
-        if (gameObject.name == "Crate1")
-            Debug.Log(gameObject.name + ": " + (Time.time - _lastDataTime));
+//        if (gameObject.name == "Crate 1")
+//            Debug.Log(gameObject.name + ": " + (Time.time - _lastDataTime));
         Vector3 target = new Vector3(x, y, 0);
         transform.position = target;
         transform.eulerAngles = Vector3.forward * angle;
