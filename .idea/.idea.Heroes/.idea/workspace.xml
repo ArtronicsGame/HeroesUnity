@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c4e60fc-76ea-4d05-9c0b-4956baac3d3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/PlayerInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/PlayerInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/MovementData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/MovementData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Heroes/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Heroes/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Heroes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Heroes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/MapExporterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/MapExporterEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/PrefabMap.preset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/PrefabMap.preset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MatchScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MatchScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapCreator/Creator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapCreator/Creator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapCreator/Exporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapCreator/Exporter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MatchHandler/MatchHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MatchHandler/MatchHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/MessageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/MessageHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NetworkDriven.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NetworkDriven.cs.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="1c4e60fc-76ea-4d05-9c0b-4956baac3d3b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,29 +25,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement/Joystick.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="165">
+              <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
               <folding>
-                <marker date="1553864471492" expanded="false" signature="6:120" ph="..." />
-                <marker date="1553864471492" expanded="true" signature="159:3252" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="496:2158" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="514:2050" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="659:1090" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="1161:1765" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="1442:1548" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="1836:2040" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="2089:2152" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="2178:3130" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="2386:2483" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="2526:2623" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="2664:2761" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="2836:3124" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="2923:3002" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="3086:3114" ph="{...}" />
-                <marker date="1553864471492" expanded="true" signature="3156:3250" ph="{...}" />
+                <marker date="1553940500902" expanded="false" signature="6:120" ph="..." />
+                <marker date="1553940500902" expanded="true" signature="159:3197" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="496:2103" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="514:1995" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="659:1090" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="1161:1765" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="1442:1548" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="1836:1985" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="2034:2097" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="2123:3075" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="2331:2428" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="2471:2568" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="2609:2706" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="2781:3069" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="2868:2947" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="3031:3059" ph="{...}" />
+                <marker date="1553940500902" expanded="true" signature="3101:3195" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -134,7 +116,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Network/MessageHandler.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -282,13 +264,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MatchHandler/MatchHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Movement/MatchCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapCreator/Creator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Movement/Joystick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Movement/MovementData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Network/MessageHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Movement/Joystick.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="240" />
     <option name="y" value="130" />
     <option name="width" value="1440" />
@@ -418,12 +400,12 @@
       <workItem from="1553382188570" duration="35264000" />
       <workItem from="1553712268828" duration="20638000" />
       <workItem from="1553788653401" duration="5585000" />
-      <workItem from="1553852341081" duration="13985000" />
+      <workItem from="1553852341081" duration="14729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100707000" />
+    <option name="totallyTimeSpent" value="101451000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -436,6 +418,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1945629" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -820,32 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement/Joystick.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <marker date="1553864471492" expanded="false" signature="6:120" ph="..." />
-            <marker date="1553864471492" expanded="true" signature="159:3252" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="496:2158" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="514:2050" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="659:1090" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="1161:1765" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="1442:1548" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="1836:2040" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="2089:2152" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="2178:3130" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="2386:2483" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="2526:2623" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="2664:2761" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="2836:3124" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="2923:3002" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="3086:3114" ph="{...}" />
-            <marker date="1553864471492" expanded="true" signature="3156:3250" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement/MovementData.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -878,6 +835,32 @@
             <marker date="1553940053369" expanded="true" signature="2353:2443" ph="{...}" />
             <marker date="1553940053369" expanded="true" signature="2553:2862" ph="{...}" />
             <marker date="1553940053369" expanded="true" signature="2698:2788" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement/Joystick.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+          <folding>
+            <marker date="1553940500902" expanded="false" signature="6:120" ph="..." />
+            <marker date="1553940500902" expanded="true" signature="159:3197" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="496:2103" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="514:1995" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="659:1090" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="1161:1765" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="1442:1548" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="1836:1985" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="2034:2097" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="2123:3075" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="2331:2428" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="2471:2568" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="2609:2706" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="2781:3069" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="2868:2947" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="3031:3059" ph="{...}" />
+            <marker date="1553940500902" expanded="true" signature="3101:3195" ph="{...}" />
           </folding>
         </state>
       </provider>

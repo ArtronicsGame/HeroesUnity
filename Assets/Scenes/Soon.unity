@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3049c61c4bed319458cb5948750dffc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInfo: {fileID: 11400000, guid: fad09a14ec1efa743985893445e17e6f, type: 2}
   prefabMap: {fileID: 11400000, guid: 9c187dc83c080e74595739d84036d53d, type: 2}
 --- !u!114 &195348374
 MonoBehaviour:
@@ -228,6 +229,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -315,6 +317,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83f80d2bcd387041aaa39f3f3529038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &888628293
 GameObject:
   m_ObjectHideFlags: 0
@@ -30304,7 +30319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1017250022
 Grid:
   m_ObjectHideFlags: 0
@@ -30378,6 +30393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 11400000, guid: fad09a14ec1efa743985893445e17e6f, type: 2}
+  movementData: {fileID: 11400000, guid: 67f749bce2d50a74f81b886e33532fc7, type: 2}
 --- !u!114 &1053613872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30396,11 +30412,13 @@ MonoBehaviour:
     - MatchPlace
     - MatchUpdate
     - NewItem
+    - HeroID
     values:
     - {fileID: 1701690148}
     - {fileID: 1701690148}
     - {fileID: 1701690148}
     - {fileID: 195348373}
+    - {fileID: 1701690148}
 --- !u!1 &1701690146
 GameObject:
   m_ObjectHideFlags: 0
