@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
@@ -17,6 +18,7 @@ public class MainTCPConnection : MonoBehaviour
 
     public string IPAddress = "5.253.27.99";
     public int Port = 8008;
+    public List<GameObject> enableOnConnection;
 
     private TcpClient _client;
     private Thread _readThread;
@@ -41,7 +43,15 @@ public class MainTCPConnection : MonoBehaviour
     void Start()
     {
         _responseAnalyzer = GetComponentInChildren<ResponseAnalyzer>();
-        new Thread(Bootstrap).Start();
+        Thread bootstrapThread = new Thread(Bootstrap);
+        bootstrapThread.Start();
+    }
+
+    private void Update()
+    {
+        if(_client != null && _client.Connected && _readThread != null && _readThread.IsAlive)
+            for (int i = 0; i < enableOnConnection.Count; i++)
+                enableOnConnection[i].SetActive(true);
     }
 
     void Bootstrap()
@@ -55,29 +65,26 @@ public class MainTCPConnection : MonoBehaviour
 
     void TcpReader()
     {
-        try { 			
-            Byte[] bytes = new Byte[1024];             
-            while (true) { 				
-                // Get a stream object for reading 				
-                using (NetworkStream stream = _client.GetStream()) { 
-                    int length; 								
-                    while ((length = stream.Read(bytes, 0, bytes.Length)) != 0) { 						
-                        var incomingData = new byte[length]; 						
-                        Array.Copy(bytes, 0, incomingData, 0, length); 	
-                        
-                        string message = System.Text.Encoding.ASCII.GetString(incomingData);
-                        try
-                        {
-                            Event response = JsonConvert.DeserializeObject<Event>(message);
-                            _responseAnalyzer.Analyze(response);
-                        }
-                        catch (Exception)
-                        {
-                            Debug.Log("Non-JSON Message: " + message);
-                        }
-                    } 				
-                } 			
-            }         
+        try { 		
+            
+            using (StreamReader reader = new StreamReader(_client.GetStream(), Encoding.ASCII))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    Debug.Log("Line: " + line);
+                    try
+                    {
+                        Event response = JsonConvert.DeserializeObject<Event>(line);
+                        _responseAnalyzer.Analyze(response);
+                    }
+                    catch (Exception)
+                    {
+                        Debug.Log("Non-JSON Message: " + line);
+                    }
+                }
+            }
+                
         }         
         catch (SocketException socketException) {             
             Debug.Log("Socket exception: " + socketException);         
@@ -89,9 +96,10 @@ public class MainTCPConnection : MonoBehaviour
         try
         {
             Byte[] data =
-                System.Text.Encoding.ASCII.GetBytes(text);
+                System.Text.Encoding.ASCII.GetBytes(text + "\n");
             NetworkStream stream = _client.GetStream();
             stream.Write(data, 0, data.Length);
+            stream.Flush();
             return true;
         }
         catch (Exception e)

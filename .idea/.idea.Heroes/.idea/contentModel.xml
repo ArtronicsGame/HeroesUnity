@@ -23,6 +23,7 @@
         </e>
         <e p="Editor" t="Include">
           <e p="MapExporterEditor.cs" t="Include" />
+          <e p="PlayerInfoEditor.cs" t="Include" />
           <e p="PrefabMapEditor.cs" t="Include" />
           <e p="ResponseAnalyzerEditor.cs" t="Include" />
         </e>
@@ -55,6 +56,8 @@
           </e>
           <e p="Model" t="Include">
             <e p="PlayerInfo.cs" t="Include" />
+            <e p="Status.cs" t="Include" />
+            <e p="UDPPacket.cs" t="Include" />
           </e>
           <e p="Movement" t="Include">
             <e p="Joystick.cs" t="Include" />
@@ -68,6 +71,9 @@
             <e p="MessageHandler.cs" t="Include" />
             <e p="ResponseAnalyzer.cs" t="Include" />
             <e p="UDPConnection.cs" t="Include" />
+          </e>
+          <e p="PlayerManagement" t="Include">
+            <e p="PlayerManager.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="SerializableDictionary.cs" t="Include" />

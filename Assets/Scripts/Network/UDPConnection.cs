@@ -27,9 +27,10 @@ public class UDPConnection : MonoBehaviour
             _responseAnalyzer = connectionManager.GetComponentInChildren<ResponseAnalyzer>();
     }
 
-    public void Connect(int port)
+    public void Connect(string ip, int port)
     {
-        _client = new UdpClient(1230);
+        _client = new UdpClient();
+        IPAddress = ip;
         Port = port;
         _client.Connect(IPAddress, Port);
         _readThread = new Thread(UdpReader) {IsBackground = true};
@@ -44,39 +45,14 @@ public class UDPConnection : MonoBehaviour
 
             // Blocks until a message returns on this socket from a remote host.
             Byte[] receiveBytes = _client.Receive(ref remoteIpEndPoint);
-            string data = Encoding.ASCII.GetString(receiveBytes);
-            string[] lines = data.Split(':');
-            
-            foreach (string line in lines)
-            {
-                if (line.Contains(";"))
-                {
-                    Event e = new Event {Type = "MatchUpdate"};
-                    string[] slice = line.Split(';');
-                    e.Info = new Dictionary<string, string>()
-                    {
-                        {"X", slice[0]},
-                        {"Y", slice[1]},
-                        {"Angle", slice[2]},
-                        {"Id", slice[3]}
-                    };
-                    _responseAnalyzer.Analyze(e);
-                }
-                else
-                {
-                    Debug.Log(line);
-                }
-            }
-
+            _responseAnalyzer.Analyze(new Event(new UDPPacket(receiveBytes)));
         }
     }
 
-    public bool SendData(string text)
+    public bool SendData(byte[] data)
     {
         try
         {
-            Byte[] data =
-                System.Text.Encoding.ASCII.GetBytes(text);
             _client.Send(data, data.Length);
             return true;
         }
@@ -89,7 +65,7 @@ public class UDPConnection : MonoBehaviour
 
     void OnDestroy()
     {
-        _readThread.Abort();
-        _client.Close();
+        _readThread?.Abort();
+        _client?.Close();
     }
 }

@@ -15,6 +15,11 @@ public class MatchTCPConnection : MonoBehaviour
 {
     public string IPAddress = "5.253.27.99";
     public int Port = 40123;
+    
+    public string MatchIPAddress = "-";
+    public int MatchPort = 0;
+    
+    
 
     private TcpClient _client;
     private Thread _readThread;
@@ -54,10 +59,12 @@ public class MatchTCPConnection : MonoBehaviour
         }
     }
 
-    public void ConnectMatchServer(int port)
+    public void Connect(string ip, int port)
     {
-        Port = port;
-        _client = new TcpClient(IPAddress, Port);
+        MatchIPAddress = ip;
+        MatchPort = port;
+        
+        _client = new TcpClient(ip, port);
         _readThread = new Thread(TcpReader);
         _readThread.IsBackground = true;
         _readThread.Start();
@@ -67,8 +74,9 @@ public class MatchTCPConnection : MonoBehaviour
     {
         try
         {
+            Debug.Log("Match Send: " + text);
             Byte[] data =
-                System.Text.Encoding.ASCII.GetBytes(text);
+                Encoding.ASCII.GetBytes(text);
             NetworkStream stream = _client.GetStream();
             stream.Write(data, 0, data.Length);
             return true;
@@ -89,7 +97,7 @@ public class MatchTCPConnection : MonoBehaviour
             try
             {
                 Byte[] data =
-                    System.Text.Encoding.ASCII.GetBytes(text);
+                    Encoding.ASCII.GetBytes(text);
 
                 Byte[] bytes = new Byte[1024];
                 using (NetworkStream stream = _client.GetStream())
@@ -106,6 +114,7 @@ public class MatchTCPConnection : MonoBehaviour
 
                         _client.Close();
                         _client.Dispose();
+                        Debug.Log("MatchMaker: " + message);
                         if (_responseAnalyzer.Analyze(response))
                             break;
                     }

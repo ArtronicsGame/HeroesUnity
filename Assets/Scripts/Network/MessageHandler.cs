@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using Newtonsoft.Json;
 using UnityEngine;
+using Utils;
 using Event = EventSystem.Model.Event;
 
 public class MessageHandler : MonoBehaviour
@@ -19,26 +20,24 @@ public class MessageHandler : MonoBehaviour
         _mainTcp = GetComponentInParent<MainTCPConnection>();
 
         GameObject matchHandler = GameObject.Find("MatchHandler");
-        Debug.Log(matchHandler);
         if (matchHandler != null)
         {
             _matchTcp = matchHandler.GetComponent<MatchTCPConnection>();
             _matchUdp = matchHandler.GetComponent<UDPConnection>();
         }
-
-        NewMatch();
+        
     }
 
-    private bool moving = false;
+    private bool _moving = false;
     void Update()
     {
         if (movementData.speed != 0)
         {
-            moving = true;
+            _moving = true;
             SendLocation();
-        }else if (moving)
+        }else if (_moving)
         {
-            moving = false;
+            _moving = false;
             SendLocation();
         }
     }
@@ -55,52 +54,57 @@ public class MessageHandler : MonoBehaviour
         return _mainTcp.SendData(JsonConvert.SerializeObject(e));
     }
     
+    public bool GetPlayer(string id)
+    {
+        Event e = new Event();
+        e.Type = "PlayerController.get";
+        e.Info = new Dictionary<string, string>()
+        {
+            {"_id", id}
+        };
+        Debug.Log(JsonConvert.SerializeObject(e));
+        return _mainTcp.SendData(JsonConvert.SerializeObject(e));
+    }
+    
     public void NewMatch()
     {
         Event e = new Event();
         e.Type = "New";
         e.Info = new Dictionary<string, string>()
         {
-            {"id", playerInfo.ID}
+            {"id", playerInfo.PlayerData.ID}
         };
         _matchTcp.SendInitialData(JsonConvert.SerializeObject(e));
     }
 
     public bool SendLocation()
     {
-        Event e = new Event();
-        e.Type = "HeroMove";
-        e.Info = new Dictionary<string, string>()
-        {
-            {"id", playerInfo.MatchPlayerID},
-            {"speed", movementData.speed.ToString()},
-            {"x", movementData.direction.x.ToString()},
-            {"y", movementData.direction.y.ToString()}
-        };
-        return _matchTcp.SendData(JsonConvert.SerializeObject(e) + "\n");
+        UDPPacket packet = new UDPPacket();
+        packet.type = 'U';
+        packet.fList.Add(movementData.speed);
+        packet.fList.Add(movementData.direction.x);
+        packet.fList.Add(movementData.direction.y);
+        
+        return _matchUdp.SendData(packet.Encode());
     }
     
     public bool TCPHandshake()
     {
         Event e = new Event();
-        e.Type = "MatchController.tcpHandshake";
+        e.Type = "Handshake";
         e.Info = new Dictionary<string, string>()
         {
-            {"id", playerInfo.ID},
-            {"matchId", playerInfo.MatchID}
+            {"id", playerInfo.PlayerData.ID},
         };
         return _matchTcp.SendData(JsonConvert.SerializeObject(e));
     }
     
     public bool UDPHandshake()
     {
-        Event e = new Event();
-        e.Type = "MatchController.udpHandshake";
-        e.Info = new Dictionary<string, string>()
-        {
-            {"id", playerInfo.ID},
-            {"matchId", playerInfo.MatchID}
-        };
-        return _matchUdp.SendData(JsonConvert.SerializeObject(e));
+        UDPPacket packet = new UDPPacket();
+        packet.type = 'H';
+        packet.str = playerInfo.PlayerData.ID;
+
+        return _matchUdp.SendData(packet.Encode());
     }
 }

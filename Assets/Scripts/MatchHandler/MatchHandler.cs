@@ -6,7 +6,7 @@ using Event = EventSystem.Model.Event;
 public class MatchHandler : EventBehaviour
 {
     public PlayerInfo PlayerInfo;
-    
+
     private MainTCPConnection _mainTcp;
     private MatchTCPConnection _matchTcp;
     private UDPConnection _matchUdp;
@@ -25,18 +25,16 @@ public class MatchHandler : EventBehaviour
         _matchUdp = GetComponent<UDPConnection>();
     }
 
-    private float lastT;
-
     protected override void OnEvent(Event e)
     {
         switch (e.Type)
         {
             case "MatchPlace":
                 Debug.Log("We Have Match Port");
-                _matchTcp.ConnectMatchServer(int.Parse(e.Info["matchPort"]));
-                _matchUdp.Connect(int.Parse(e.Info["matchPort"]));
-                PlayerInfo.MatchID = e.Info["matchId"];
-                PlayerInfo.MatchPlayerID = e.Info["fakeId"];
+                PlayerInfo.PlayerData.MatchIP = e.Info["matchIP"];
+                PlayerInfo.PlayerData.MatchPort = int.Parse(e.Info["matchPort"]);
+                _matchTcp.Connect(PlayerInfo.PlayerData.MatchIP, PlayerInfo.PlayerData.MatchPort);
+                _matchUdp.Connect(PlayerInfo.PlayerData.MatchIP, PlayerInfo.PlayerData.MatchPort);
                 _messageHandler.TCPHandshake();
                 _messageHandler.UDPHandshake();
 
@@ -53,13 +51,14 @@ public class MatchHandler : EventBehaviour
                     Mathf.Rad2Deg * float.Parse(e.Info["Angle"]));
                 break;
             case "MatchStart":
-                
+
+                break;
+            case "FakeID":
+                Debug.Log("Fake ID Received");
+                PlayerInfo.MatchPlayerID = int.Parse(e.Info["id"]);
                 break;
             case "HeroID":
-                if (PlayerInfo.ID == e.Info["ID"])
-                {
-                    PlayerInfo.HeroName = e.Info["HeroID"];
-                }
+                PlayerInfo.HeroName = e.Info["HeroID"];
                 break;
         }
     }

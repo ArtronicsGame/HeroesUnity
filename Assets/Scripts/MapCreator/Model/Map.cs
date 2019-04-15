@@ -36,9 +36,9 @@ namespace MapCreator.Model
 
     public class PolygonBody
     {
-        [JsonProperty("Dynamic")] public bool Dynamic;
-        [JsonProperty("Name")] public string Name;
-        [JsonProperty("Type")] public string Type;
+        [JsonProperty("Dynamic")] public bool Dynamic { get; set; }
+        [JsonProperty("Name")] public string Name { get; set; }
+        [JsonProperty("Type")] public string Type { get; set; }
         [JsonProperty("Position")] public Vec2 Position { get; set; }
         [JsonProperty("Angle")] public float Angle { get; set; }
         [JsonProperty("Nodes")] public List<Vec2> Nodes { get; set; }
