@@ -27,9 +27,7 @@ public class MatchTCPConnection : MonoBehaviour
 
     void Start()
     {
-        GameObject connectionManager = GameObject.Find("ConnectionManager");
-        if (connectionManager != null)
-            _responseAnalyzer = connectionManager.GetComponentInChildren<ResponseAnalyzer>();
+        _responseAnalyzer = GetComponentInChildren<ResponseAnalyzer>();
     }
 
     void TcpReader()

@@ -24,6 +24,11 @@ public class MainTCPConnection : MonoBehaviour
     private Thread _readThread;
     private ResponseAnalyzer _responseAnalyzer;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     int GetNewPort()
     {
         _client = new TcpClient(IPAddress, Port);
@@ -51,7 +56,7 @@ public class MainTCPConnection : MonoBehaviour
     {
         if(_client != null && _client.Connected && _readThread != null && _readThread.IsAlive)
             for (int i = 0; i < enableOnConnection.Count; i++)
-                enableOnConnection[i].SetActive(true);
+                enableOnConnection[i]?.SetActive(true);
     }
 
     void Bootstrap()

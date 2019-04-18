@@ -10,19 +10,16 @@ public class MatchHandler : EventBehaviour
     private MainTCPConnection _mainTcp;
     private MatchTCPConnection _matchTcp;
     private UDPConnection _matchUdp;
-    private MessageHandler _messageHandler;
+    private MatchMessageHandler _messageHandler;
 
     new void Start()
     {
         base.Start();
-        GameObject connectionManager = GameObject.Find("ConnectionManager");
-        if (connectionManager != null)
-        {
-            _messageHandler = connectionManager.GetComponentInChildren<MessageHandler>();
-        }
-
+        _messageHandler = GetComponentInChildren<MatchMessageHandler>();
         _matchTcp = GetComponent<MatchTCPConnection>();
         _matchUdp = GetComponent<UDPConnection>();
+       
+        _messageHandler.NewMatch();
     }
 
     protected override void OnEvent(Event e)

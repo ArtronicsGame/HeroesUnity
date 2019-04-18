@@ -11,6 +11,7 @@ public class DictionaryOfGameObjects: SerializableDictionary<string, EventBehavi
 
 public class ResponseAnalyzer : MonoBehaviour
 {
+    [SerializeField]
     public DictionaryOfGameObjects map = new DictionaryOfGameObjects();
     
     [MethodImpl(MethodImplOptions.Synchronized)]

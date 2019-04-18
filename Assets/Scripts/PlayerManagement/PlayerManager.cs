@@ -10,6 +10,11 @@ public class PlayerManager : EventBehaviour
     
     private MessageHandler _messageHandler;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     new void Start()
     {
         base.Start();
@@ -25,7 +30,7 @@ public class PlayerManager : EventBehaviour
         }
         else
         {
-            _messageHandler.NewPlayer("Hojat");
+            _messageHandler.NewPlayer("AliShakh");
         }
     }
 
@@ -44,7 +49,6 @@ public class PlayerManager : EventBehaviour
                 if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {
                     playerInfo.PlayerData = JsonConvert.DeserializeObject<PlayerData>(e.Info["user"]);
-                    _messageHandler.NewMatch();
                 }
                 break;
         }
