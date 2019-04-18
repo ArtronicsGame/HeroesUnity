@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using Newtonsoft.Json;
 using UnityEngine;
-using Utils;
 using Event = EventSystem.Model.Event;
 
 public class MessageHandler : MonoBehaviour

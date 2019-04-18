@@ -13,9 +13,40 @@ MonoBehaviour:
   m_Name: DefaultPrefabMap
   m_EditorClassIdentifier: 
   prefabsMap:
-    keys:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
     - Crate
     - Ground
-    values:
+    - Tree
+    - Wizard
+    _keys:
+    - Crate
+    - Ground
+    - Tree
+    - Wizard
+    _values:
     - {fileID: 4958917668544149011, guid: 6fa0018c69d13ba4ea02c16a6d0bbb73, type: 3}
     - {fileID: 2741673766595820466, guid: 02282e604637f4d4f885591f24a4a627, type: 3}
+    - {fileID: 4571023798967728058, guid: 745e0d16b274ad249a7586ee1578d0a8, type: 3}
+    - {fileID: 8935330153158199641, guid: cf9dc980d5b3c4c4788f69b7b38f8244, type: 3}

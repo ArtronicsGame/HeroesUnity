@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using Newtonsoft.Json;
 using UnityEngine;
-using Utils;
 using Event = EventSystem.Model.Event;
 
 public class MatchMessageHandler : MonoBehaviour
@@ -42,7 +41,6 @@ public class MatchMessageHandler : MonoBehaviour
 
     public void NewMatch()
     {
-        Debug.Log("Match started");
         Event e = new Event();
         e.Type = "New";
         e.Info = new Dictionary<string, string>()
@@ -50,7 +48,6 @@ public class MatchMessageHandler : MonoBehaviour
             {"id", playerInfo.PlayerData.ID}
         };
         _matchTcp.SendInitialData(JsonConvert.SerializeObject(e));
-        Debug.Log("Initial data sent");
     }
 
     public bool SendLocation()

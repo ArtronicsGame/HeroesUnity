@@ -24,8 +24,6 @@
         <e p="Editor" t="Include">
           <e p="MapExporterEditor.cs" t="Include" />
           <e p="PlayerInfoEditor.cs" t="Include" />
-          <e p="PrefabMapEditor.cs" t="Include" />
-          <e p="ResponseAnalyzerEditor.cs" t="Include" />
         </e>
         <e p="Maps" t="Include">
           <e p="Body.txt" t="Include" />
@@ -34,6 +32,26 @@
           <e p="PlayerTest.txt" t="Include" />
           <e p="Tree.txt" t="Include" />
           <e p="Wizard.txt" t="Include" />
+        </e>
+        <e p="Rotary Heart" t="Include">
+          <e p="SerializableDictionary" t="Include">
+            <e p="DrawKeyAsPropertyAttribute.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="Constants.cs" t="Include" />
+              <e p="Definer.cs" t="Include" />
+              <e p="DictionaryPropertyDrawer.cs" t="Include" />
+              <e p="PreferencesWindow.cs" t="Include" />
+              <e p="SupportWindow.cs" t="Include" />
+            </e>
+            <e p="IDAttribute.cs" t="Include" />
+            <e p="References" t="Include">
+              <e p="RequiredReferences.cs" t="Include" />
+            </e>
+            <e p="ReorderableList" t="Include">
+              <e p="ReorderableList.cs" t="Include" />
+            </e>
+            <e p="SerializableDictionaryBase.cs" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="EventSystem" t="Include">
@@ -67,6 +85,7 @@
           </e>
           <e p="Network" t="Include">
             <e p="MainTCPConnection.cs" t="Include" />
+            <e p="MatchMessageHandler.cs" t="Include" />
             <e p="MatchTCPConnection.cs" t="Include" />
             <e p="MessageHandler.cs" t="Include" />
             <e p="ResponseAnalyzer.cs" t="Include" />
@@ -75,8 +94,11 @@
           <e p="PlayerManagement" t="Include">
             <e p="PlayerManager.cs" t="Include" />
           </e>
-          <e p="Utils" t="Include">
-            <e p="SerializableDictionary.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="EventManager.cs" t="Include" />
+            <e p="ScrollSnapRect.cs" t="Include" />
+            <e p="ShopSceneControl.cs" t="Include" />
+            <e p="UIControl.cs" t="Include" />
           </e>
         </e>
       </e>

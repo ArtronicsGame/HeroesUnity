@@ -9,7 +9,7 @@ public class PlayerManager : EventBehaviour
     public PlayerInfo playerInfo;
     
     private MessageHandler _messageHandler;
-
+    
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

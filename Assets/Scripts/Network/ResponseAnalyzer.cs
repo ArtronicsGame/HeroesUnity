@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
-using Utils;
 using Event = EventSystem.Model.Event;
 
 [Serializable] 
-public class DictionaryOfGameObjects: SerializableDictionary<string, EventBehaviour> {}
+public class DictionaryOfGameObjects: SerializableDictionaryBase<string, EventBehaviour> {}
 
+[Serializable]
 public class ResponseAnalyzer : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +20,7 @@ public class ResponseAnalyzer : MonoBehaviour
     {
         if (map.ContainsKey(response.Type))
         {
+            Debug.Log(response.Type);
             EventBehaviour system = map[response.Type];
             system.AddEvent(response);
         }

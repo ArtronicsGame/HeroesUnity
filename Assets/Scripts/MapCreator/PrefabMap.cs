@@ -1,16 +1,16 @@
 using System;
+using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
-using Utils;
 
 namespace MapCreator
 {
     [Serializable]
-    public class DictionaryOfPrefabs: SerializableDictionary<string, GameObject> {}
-
+    public class DictionaryOfPrefabs: SerializableDictionaryBase<string, GameObject> {}
     
     [CreateAssetMenu(fileName = "PrefabMap")]
     public class PrefabMap : ScriptableObject
     {
+        [SerializeField]
         public DictionaryOfPrefabs prefabsMap = new DictionaryOfPrefabs();
 
         public GameObject GetObject(string name)
