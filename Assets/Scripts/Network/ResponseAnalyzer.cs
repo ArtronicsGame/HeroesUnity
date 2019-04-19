@@ -20,7 +20,6 @@ public class ResponseAnalyzer : MonoBehaviour
     {
         if (map.ContainsKey(response.Type))
         {
-            Debug.Log(response.Type);
             EventBehaviour system = map[response.Type];
             system.AddEvent(response);
         }

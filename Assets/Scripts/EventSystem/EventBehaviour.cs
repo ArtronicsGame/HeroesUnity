@@ -22,8 +22,7 @@ public abstract class EventBehaviour : MonoBehaviour
     {
         while (true)
         {
-            Event e;
-            while (_events.TryDequeue(out e))
+            while (_events.TryDequeue(out var e))
             {
                 OnEvent(e);
             }

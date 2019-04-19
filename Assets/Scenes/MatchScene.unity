@@ -185,18 +185,21 @@ MonoBehaviour:
     - HeroID
     - FakeID
     - NewItem
+    - MatchEnd
     _keys:
     - MatchPlace
     - MatchUpdate
     - HeroID
     - FakeID
     - NewItem
+    - MatchEnd
     _values:
     - {fileID: 1701690148}
     - {fileID: 1701690148}
     - {fileID: 1701690148}
     - {fileID: 1701690148}
     - {fileID: 195348373}
+    - {fileID: 1701690148}
 --- !u!114 &178890787
 MonoBehaviour:
   m_ObjectHideFlags: 0

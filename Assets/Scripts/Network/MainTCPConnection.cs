@@ -24,11 +24,19 @@ public class MainTCPConnection : MonoBehaviour
     private Thread _readThread;
     private ResponseAnalyzer _responseAnalyzer;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
+    public static MainTCPConnection i;
+     
+    void Awake () {
+        if(!i) {
+            i = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
+    
     int GetNewPort()
     {
         _client = new TcpClient(IPAddress, Port);

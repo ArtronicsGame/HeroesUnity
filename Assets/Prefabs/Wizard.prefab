@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 1433718649903712067}
   - component: {fileID: 7673999199915349898}
   - component: {fileID: 2517787120499459593}
-  - component: {fileID: 5740299334783518700}
   - component: {fileID: 4615399213475978861}
+  - component: {fileID: 2949299119253357756}
+  - component: {fileID: 6202768353734910924}
+  - component: {fileID: 6327544926260020920}
+  - component: {fileID: 4106936283737477980}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -96,14 +99,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Wizard
   dynamic: 1
---- !u!60 &5740299334783518700
-PolygonCollider2D:
+--- !u!114 &4615399213475978861
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8935330153158199641}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75949c24ab077ab4c859e78976a962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &2949299119253357756
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935330153158199641}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.4
+--- !u!68 &6202768353734910924
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935330153158199641}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 4.3505573, y: 0.6066046}
+  - {x: 4.864293, y: 0.6540146}
+  - {x: 5.1653605, y: 0.5761385}
+  - {x: 5.1518154, y: 0.4310665}
+  - {x: 4.893833, y: 0.28622913}
+  - {x: 4.3833113, y: 0.22732735}
+--- !u!60 &6327544926260020920
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935330153158199641}
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -121,15 +174,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 5.284149, y: 0.9892707}
-      - {x: 5.3434677, y: -1.1740389}
-      - {x: 2.0217094, y: -4.06774}
-      - {x: -2.015892, y: -4.4710793}
-      - {x: -4.0444527, y: -2.2233346}
-      - {x: -4.4470596, y: 1.5077467}
-      - {x: -1.6788101, y: 4.3624086}
-      - {x: 1.9626732, y: 4.4981575}
---- !u!114 &4615399213475978861
+    - - {x: 5.075781, y: -0.41837692}
+      - {x: 4.852764, y: -0.33500195}
+      - {x: 4.3801193, y: -0.27426386}
+      - {x: 4.335268, y: -0.6479683}
+      - {x: 4.804638, y: -0.680058}
+      - {x: 5.07156, y: -0.6519222}
+      - {x: 5.1795273, y: -0.5475154}
+--- !u!114 &4106936283737477980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +190,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8935330153158199641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75949c24ab077ab4c859e78976a962fe, type: 3}
+  m_Script: {fileID: 11500000, guid: d9cd181fd66947b4ae2a9f04dea8116f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeError: 0.3

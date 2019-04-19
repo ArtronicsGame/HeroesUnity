@@ -8,6 +8,6 @@ public class EventManager : MonoBehaviour
 //    private AssetBundle matchSe
     public void OnPlayBtnClicked()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }

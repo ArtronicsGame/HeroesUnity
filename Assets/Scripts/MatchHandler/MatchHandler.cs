@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Event = EventSystem.Model.Event;
 
 public class MatchHandler : EventBehaviour
@@ -56,6 +57,10 @@ public class MatchHandler : EventBehaviour
                 break;
             case "HeroID":
                 PlayerInfo.HeroName = e.Info["HeroID"];
+                break;
+            case "MatchEnd":
+                Debug.Log("Match Ended");
+                SceneManager.LoadScene(0, LoadSceneMode.Single);
                 break;
         }
     }
