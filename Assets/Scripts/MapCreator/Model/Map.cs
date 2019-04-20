@@ -7,13 +7,22 @@ namespace MapCreator.Model
     public class Map
     {
         [JsonProperty("Gravity")] public Vec2 Gravity { get; set; }
-        
+        [JsonProperty("Width")] public float width { get; set; }
+        [JsonProperty("Height")] public float height { get; set; }
+        [JsonProperty("SpawnPlaces")] public List<Vec2> spawnPlaces;
+
         [JsonProperty("Bodies")] public List<Body> Bodies { get; set; }
 
-        public Map(float x, float y)
+        public Map(float x, float y, float width, float height, List<Vector2> sp)
         {
             Gravity = new Vec2(x, y);
             Bodies = new List<Body>();
+            this.width = width;
+            this.height = height;
+            
+            spawnPlaces = new List<Vec2>();
+            foreach (Vector2 vec in sp)
+                spawnPlaces.Add(new Vec2(vec.x, vec.y));
         }
 
         public void AddBody(Body body)

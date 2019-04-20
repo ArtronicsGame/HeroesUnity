@@ -27,7 +27,7 @@ public class Creator : EventBehaviour
                 element.name = e.Info["elemName"];
                 if (element.name == playerInfo.HeroName)
                 {
-                    Camera.main.GetComponent<MatchCamera>().target = element;
+                    Camera.main.GetComponent<MatchCamera>().target = element.transform;
                 }
                 break;
         }

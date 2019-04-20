@@ -26,6 +26,7 @@ public class Joystick : MonoBehaviour
             {
                 _joyStickFlag = true;
                 _center = Camera.main.ScreenToWorldPoint(pos);
+                Debug.Log(_center);
                 if (_joyStick != null && _joyStick.activeSelf)
                     Destroy(_joyStick);
                 _joyStick = Instantiate(joyStickPrefab, _center, Quaternion.identity);
@@ -36,13 +37,14 @@ public class Joystick : MonoBehaviour
             {
                 GameObject button = _joyStick.transform.GetChild(0).gameObject;
                 Vector2 buttonPos = Camera.main.ScreenToWorldPoint(pos);
+                _center = (Vector2) _joyStick.transform.position;
                 Vector2 direction = buttonPos - _center;
                 if (direction.magnitude > joyStickRange)
                 {
                     direction = direction.normalized * joyStickRange;
                 }
 
-                button.transform.position = _center + direction;
+                button.transform.position = direction + _center;
                 movementData.direction = direction.normalized;
                 movementData.speed = direction.magnitude / joyStickRange;
             }

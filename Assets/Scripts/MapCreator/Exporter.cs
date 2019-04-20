@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class Exporter : MonoBehaviour
 {
+    public List<Vector2> spawnPlaces = new List<Vector2>();
+    public float width, height; 
 
     public Vector2 gravity = new Vector2(0, -10);
     
@@ -58,7 +60,7 @@ public class Exporter : MonoBehaviour
     
     public void Export(string fileName)
     {
-        _map = new Map(gravity.x, gravity.y);
+        _map = new Map(gravity.x, gravity.y, width, height, spawnPlaces);
         foreach (Transform trans in transform)
         {
             GameObject o = trans.gameObject;
@@ -74,5 +76,14 @@ public class Exporter : MonoBehaviour
         #if UNITY_EDITOR
         AssetDatabase.ImportAsset("Assets/Maps/" + fileName + ".txt");
         #endif
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector3(0, 0), new Vector3(width, 0));
+        Gizmos.DrawLine(new Vector3(width, 0), new Vector3(width, height));
+        Gizmos.DrawLine(new Vector3(width, height), new Vector3(0, height));
+        Gizmos.DrawLine(new Vector3(0, height), new Vector3(0, 0));
     }
 }
