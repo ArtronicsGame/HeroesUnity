@@ -62,7 +62,7 @@
                         pixel.a = 0.0;
                     else
                         pixel.a = ((_MaxX - IN.worldPos.x) / _Error) ;
-                return pixel;
+                return pixel * _Color;
             }
             
             ENDCG
