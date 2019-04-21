@@ -7,11 +7,18 @@ using Event = EventSystem.Model.Event;
 
 public class MatchMessageHandler : MonoBehaviour
 {
+    public static MatchMessageHandler i;
+    
     public PlayerInfo playerInfo;
     public MovementData movementData;
 
     private MatchTCPConnection _matchTcp;
     private UDPConnection _matchUdp;
+
+    private void Awake()
+    {
+        i = this;
+    }
 
     void Start()
     {
@@ -20,22 +27,6 @@ public class MatchMessageHandler : MonoBehaviour
         {
             _matchTcp = matchHandler.GetComponent<MatchTCPConnection>();
             _matchUdp = matchHandler.GetComponent<UDPConnection>();    
-        }
-    }
-
-    private bool _moving = false;
-
-    void Update()
-    {
-        if (movementData.speed != 0)
-        {
-            _moving = true;
-            SendLocation();
-        }
-        else if (_moving)
-        {
-            _moving = false;
-            SendLocation();
         }
     }
 
