@@ -13,25 +13,25 @@ public class Joystick : MonoBehaviour
     private Vector2 _center;
     private GameObject _joyStick = null;
     private bool _joyStickFlag = false;
-    private bool _move;
+    private int _move = -1;
     private bool _attack;
 
     void HandleMovement(Touch touch)
     {
         try
         {
-            _move = true;
             Vector2 pos = touch.position;
             if (touch.phase == TouchPhase.Began && !_joyStickFlag)
             {
+                _move = touch.fingerId;
                 _joyStickFlag = true;
                 _center = Camera.main.ScreenToWorldPoint(pos);
-                Debug.Log(_center);
                 if (_joyStick != null && _joyStick.activeSelf)
                     Destroy(_joyStick);
                 _joyStick = Instantiate(joyStickPrefab, _center, Quaternion.identity);
                 _joyStick.transform.parent = gameObject.transform;
                 _joyStick.name = "Joystick";
+                MatchMessageHandler.i.SendLocation();
             }
             else if (touch.phase == TouchPhase.Moved && _joyStickFlag)
             {
@@ -40,19 +40,41 @@ public class Joystick : MonoBehaviour
                 _center = (Vector2) _joyStick.transform.position;
                 Vector2 direction = buttonPos - _center;
                 if (direction.magnitude > joyStickRange)
-                {
                     direction = direction.normalized * joyStickRange;
-                }
 
                 button.transform.position = direction + _center;
                 movementData.direction = direction.normalized;
                 movementData.speed = direction.magnitude / joyStickRange;
+                MatchMessageHandler.i.SendLocation();
             }
             else if (touch.phase == TouchPhase.Ended && _joyStickFlag)
             {
                 movementData.speed = 0;
                 _joyStickFlag = false;
+                _move = -1;
+                MatchMessageHandler.i.SendLocation();
                 Destroy(_joyStick, 0.3f);
+            }
+        }
+        catch (NullReferenceException)
+        {
+            Debug.Log("Camera Not Found");
+        }
+    }
+
+    void HandleAction(Touch touch)
+    {
+        try
+        {
+            Vector2 pos = touch.position;
+            if (touch.phase == TouchPhase.Began && !_joyStickFlag)
+            {
+            }
+            else if (touch.phase == TouchPhase.Moved && _joyStickFlag)
+            {
+            }
+            else if (touch.phase == TouchPhase.Ended && _joyStickFlag)
+            {
             }
         }
         catch (NullReferenceException)
@@ -64,10 +86,9 @@ public class Joystick : MonoBehaviour
 
     void Update()
     {
-        _move = false;
         _attack = false;
-        
-        #if UNITY_EDITOR
+
+#if UNITY_EDITOR
         Touch temp = new Touch();
         temp.position = Input.mousePosition;
         if (Input.GetMouseButtonDown(0))
@@ -75,26 +96,31 @@ public class Joystick : MonoBehaviour
             temp.phase = TouchPhase.Began;
             HandleMovement(temp);
         }
-        else if(Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0))
         {
             temp.phase = TouchPhase.Ended;
             HandleMovement(temp);
         }
-        else if(Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0))
         {
             temp.phase = TouchPhase.Moved;
             HandleMovement(temp);
         }
-        #endif
-        
+#endif
+
         for (int i = 0; i < Input.touchCount; i++)
         {
-            if (Input.GetTouch(i).position.x < (Screen.width / 2) && !_move)
+            if (Input.GetTouch(i).fingerId == _move)
+            {
+                HandleMovement(Input.GetTouch(i));
+            }
+            else if (Input.GetTouch(i).position.x < (Screen.width / 2) && _move == -1)
             {
                 HandleMovement(Input.GetTouch(i));
             }
             else if (Input.GetTouch(i).position.x > (Screen.width / 2) && !_attack)
             {
+                HandleAction(Input.GetTouch(i));
             }
         }
     }
