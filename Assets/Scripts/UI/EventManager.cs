@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 {
-//    private AssetBundle matchSe
+    //    private AssetBundle matchSe
     public void OnPlayBtnClicked()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MatchScene");
     }
 }

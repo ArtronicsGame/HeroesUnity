@@ -7,13 +7,14 @@ using Event = EventSystem.Model.Event;
 public class PlayerManager : EventBehaviour
 {
     public PlayerInfo playerInfo;
-    
+    public Manage manage;
     private MessageHandler _messageHandler;
 
     new void Start()
     {
         base.Start();
         GameObject connectionManager = GameObject.Find("ConnectionManager");
+
         if (connectionManager != null)
         {
             _messageHandler = connectionManager.GetComponentInChildren<MessageHandler>();
@@ -26,7 +27,9 @@ public class PlayerManager : EventBehaviour
         }
         else
         {
-            _messageHandler.NewPlayer("AliShakh");
+            // register
+            manage.Register();
+            // _messageHandler.NewPlayer("Soroush");
         }
     }
 
@@ -35,14 +38,14 @@ public class PlayerManager : EventBehaviour
         switch (e.Type)
         {
             case "NewPlayerResp":
-                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
+                if ((Status)int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {
                     PlayerPrefs.SetString("id", e.Info["userId"]);
                     _messageHandler.GetPlayer(e.Info["userId"]);
                 }
                 break;
             case "GetPlayerResp":
-                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
+                if ((Status)int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {
                     playerInfo.PlayerData = JsonConvert.DeserializeObject<PlayerData>(e.Info["user"]);
                 }
