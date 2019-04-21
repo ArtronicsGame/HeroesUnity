@@ -25,7 +25,7 @@ public class PlayerManager : EventBehaviour
         }
         else
         {
-            _messageHandler.NewPlayer("AliShakh");
+            _messageHandler.NewPlayer("Soroush");
         }
     }
 
