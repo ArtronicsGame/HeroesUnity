@@ -22,21 +22,40 @@
           </e>
         </e>
         <e p="Editor" t="Include">
+          <e p="ItemExporterEditor.cs" t="Include" />
           <e p="MapExporterEditor.cs" t="Include" />
           <e p="PlayerInfoEditor.cs" t="Include" />
-          <e p="PrefabMapEditor.cs" t="Include" />
-          <e p="ResponseAnalyzerEditor.cs" t="Include" />
-        </e>
-        <e p="JsonDotNet" t="Include">
-          <e p="link.xml" t="Include" />
         </e>
         <e p="Maps" t="Include">
           <e p="Body.txt" t="Include" />
           <e p="DefaultMap.txt" t="Include" />
           <e p="NewMap.txt" t="Include" />
+          <e p="NewVer.txt" t="Include" />
+          <e p="NewVer2.txt" t="Include" />
           <e p="PlayerTest.txt" t="Include" />
           <e p="Tree.txt" t="Include" />
+          <e p="Ver3.txt" t="Include" />
           <e p="Wizard.txt" t="Include" />
+        </e>
+        <e p="Rotary Heart" t="Include">
+          <e p="SerializableDictionary" t="Include">
+            <e p="DrawKeyAsPropertyAttribute.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="Constants.cs" t="Include" />
+              <e p="Definer.cs" t="Include" />
+              <e p="DictionaryPropertyDrawer.cs" t="Include" />
+              <e p="PreferencesWindow.cs" t="Include" />
+              <e p="SupportWindow.cs" t="Include" />
+            </e>
+            <e p="IDAttribute.cs" t="Include" />
+            <e p="References" t="Include">
+              <e p="RequiredReferences.cs" t="Include" />
+            </e>
+            <e p="ReorderableList" t="Include">
+              <e p="ReorderableList.cs" t="Include" />
+            </e>
+            <e p="SerializableDictionaryBase.cs" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="EventSystem" t="Include">
@@ -48,6 +67,7 @@
           <e p="MapCreator" t="Include">
             <e p="Creator.cs" t="Include" />
             <e p="Exporter.cs" t="Include" />
+            <e p="ItemExporter.cs" t="Include" />
             <e p="Model" t="Include">
               <e p="ExtraData.cs" t="Include" />
               <e p="Map.cs" t="Include" />
@@ -85,9 +105,9 @@
             <e p="ShopSceneControl.cs" t="Include" />
             <e p="UIControl.cs" t="Include" />
           </e>
-          <e p="Utils" t="Include">
-            <e p="SerializableDictionary.cs" t="Include" />
-          </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="Mask.shader" t="Include" />
         </e>
       </e>
       <e p="HeroesUnity.sln" t="IncludeFlat" />
