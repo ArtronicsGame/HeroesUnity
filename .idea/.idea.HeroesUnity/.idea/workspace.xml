@@ -2,15 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3589c68d-3fb7-487f-8e01-fe20998527ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/soldier_idle_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/soldier_idle_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Heros/knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Heros/knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Heros/old.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Heros/old.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Heros/rain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Heros/rain.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Heros/sword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Heros/sword.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/knight.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/knight/knight.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/knight/knight.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/knight/knight.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/knight/knight.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/knight/knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/knight/knight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/old.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/old/old.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/old/old.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/old/old.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/old/old.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/old/old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/old/old.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/rain.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/rain/rain.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/rain/rain.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/rain/rain.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/rain/rain.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/rain/rain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/rain/rain.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/sword.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/sword/sword.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/sword/sword.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/sword/sword.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/sword/sword.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/sword/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/sword/sword.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Mask.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Mask.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,47 +44,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManagement/PlayerManager.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-              <folding>
-                <marker date="1555829547121" expanded="false" signature="6:140" ph="..." />
-                <marker date="1555829547121" expanded="true" signature="185:1443" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="292:762" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="436:546" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="585:673" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="686:756" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="808:1441" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="838:1435" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="960:1128" ph="{...}" />
-                <marker date="1555829547121" expanded="true" signature="1263:1402" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MatchHandler/MatchHandler.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-              <folding>
-                <marker date="1555741430211" expanded="false" signature="6:152" ph="..." />
-                <marker date="1555741430211" expanded="true" signature="196:2279" ph="{...}" />
-                <marker date="1555741430211" expanded="true" signature="423:681" ph="{...}" />
-                <marker date="1555741430211" expanded="true" signature="727:2277" ph="{...}" />
-                <marker date="1555741430211" expanded="true" signature="757:2271" ph="{...}" />
-                <marker date="1555741430211" expanded="true" signature="1439:1575" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Network/MainTCPConnection.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="-34">
               <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
               <folding>
                 <marker date="1555741430386" expanded="false" signature="6:316" ph="..." />
@@ -131,22 +116,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Shaders/Mask.shader">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
-              <folding>
-                <marker date="1555834267248" expanded="true" signature="105:1457" ph="{...}" />
-                <marker date="1555834267248" expanded="true" signature="118:163" ph="{...}" />
-                <marker date="1555834267248" expanded="true" signature="174:1455" ph="{...}" />
-                <marker date="1555834267248" expanded="true" signature="273:1453" ph="{...}" />
-                <marker date="1555834267248" expanded="true" signature="292:1442" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Network/ResponseAnalyzer.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -194,15 +163,191 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/EventManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
               <folding>
-                <marker date="1555741430636" expanded="false" signature="6:113" ph="..." />
-                <marker date="1555741430636" expanded="true" signature="156:276" ph="{...}" />
-                <marker date="1555741430636" expanded="true" signature="227:274" ph="{...}" />
+                <marker date="1555838278988" expanded="false" signature="6:113" ph="..." />
+                <marker date="1555838278988" expanded="true" signature="156:291" ph="{...}" />
+                <marker date="1555838278988" expanded="true" signature="231:289" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Shaders/SelectionShader.shader">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+              <folding>
+                <marker date="1555850308062" expanded="true" signature="32:2035" ph="{...}" />
+                <marker date="1555850308062" expanded="true" signature="53:251" ph="{...}" />
+                <marker date="1555850308062" expanded="true" signature="270:2033" ph="{...}" />
+                <marker date="1555850308062" expanded="true" signature="408:2027" ph="{...}" />
+                <marker date="1555850308062" expanded="true" signature="431:2012" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Temp/Compiled-Standard.shader">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="54" column="2" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
+              <folding>
+                <marker date="1555844263030" expanded="true" signature="0:419" ph="/* Compiled shader for PC, Mac &amp; Linux Standalone ... */" />
+                <marker date="1555844263030" expanded="true" signature="452:2079" ph="{...}" />
+                <marker date="1555844263030" expanded="true" signature="2165:2347" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1555844263030" expanded="true" signature="2539:2776" ph="/* Compiled programs ... */" />
+                <marker date="1555844263030" expanded="true" signature="3541:4779" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="7907:8935" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="16816:18054" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="21594:22622" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="32092:33330" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="36999:38027" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="46582:47820" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="51901:52929" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="62922:64160" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="65938:66076" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1555844263030" expanded="true" signature="67213:68451" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="71742:71880" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1555844263030" expanded="true" signature="72709:73947" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="75881:76019" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1555844263030" expanded="true" signature="77205:78443" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="81980:82161" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1555844263030" expanded="true" signature="82341:82578" ph="/* Compiled programs ... */" />
+                <marker date="1555844263030" expanded="true" signature="83469:84777" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="87723:88821" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="94156:95394" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="97985:99013" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="103915:105223" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="108232:109330" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="115069:116377" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="119368:120466" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="126011:127319" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="130260:131358" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="136612:137920" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="141357:142455" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="149226:150534" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="154023:155121" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="163774:165012" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="168144:169172" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="174912:176220" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="179735:180833" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="186862:188170" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="191579:192677" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="199164:200472" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="203881:204979" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="212107:213415" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="216884:217982" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="224641:225949" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="229418:230516" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="236850:236916" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1555844263030" expanded="true" signature="237060:237297" ph="/* Compiled programs ... */" />
+                <marker date="1555844263030" expanded="true" signature="237944:238622" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="240300:240838" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="241662:242340" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="243891:244429" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="244559:244738" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1555844263030" expanded="true" signature="244851:245088" ph="/* Compiled programs ... */" />
+                <marker date="1555844263030" expanded="true" signature="245843:247011" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="249054:250222" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="252468:253636" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="256480:257648" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="261766:262934" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="264977:266145" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="268383:269551" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="272395:273563" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="276924:277105" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1555844263030" expanded="true" signature="277294:277531" ph="/* Compiled programs ... */" />
+                <marker date="1555844263030" expanded="true" signature="278296:279534" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="282416:283444" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="288034:289272" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="293033:294061" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="298545:299783" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="303452:304480" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="313035:314273" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="318354:319382" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="329375:330613" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="332480:332618" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1555844263030" expanded="true" signature="333839:335077" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="338809:338947" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1555844263030" expanded="true" signature="339776:341014" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="342948:343086" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1555844263030" expanded="true" signature="344272:345510" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="349047:349226" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1555844263030" expanded="true" signature="349406:349643" ph="/* Compiled programs ... */" />
+                <marker date="1555844263030" expanded="true" signature="350534:351842" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="355027:356125" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="359874:361112" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="363838:364866" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="368271:369579" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="372827:373925" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="378078:379386" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="382631:383729" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="387688:388996" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="392087:393185" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="396942:398250" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="401287:402385" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="406137:407375" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="410507:411535" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="417275:418583" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="422098:423196" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="429225:430533" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="433600:434698" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="438220:439528" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="442655:443753" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="446481:446547" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1555844263030" expanded="true" signature="446691:446928" ph="/* Compiled programs ... */" />
+                <marker date="1555844263030" expanded="true" signature="447575:448253" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="449931:450469" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="451293:451971" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1555844263030" expanded="true" signature="453522:454060" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/ScrollSnapRect.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1156">
+              <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
+              <folding>
+                <marker date="1555857101671" expanded="false" signature="6:132" ph="..." />
+                <marker date="1555857101671" expanded="true" signature="4427:4433" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="4427:11776" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="4550:6326" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="4740:5150" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="5833:6320" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="5987:6093" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="6448:6621" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="6746:6921" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="7039:8232" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="7222:8226" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="7448:7620" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="7865:8202" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="7994:8131" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="8363:8939" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="8449:8480" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="8560:8737" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="9050:9095" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="9210:9255" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="9369:9899" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="9642:9864" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="9769:9854" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="10037:10187" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="10323:11178" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="10428:10514" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="10879:11023" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="10913:10958" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="11311:11774" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="11337:11647" ph="{...}" />
+                <marker date="1555857101671" expanded="true" signature="11691:11758" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -214,15 +359,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/SelectionShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Network/MatchTCPConnection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Network/ResponseAnalyzer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/ParsedCombinations-Standard.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Network/MainTCPConnection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatchHandler/MatchHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManagement/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Network/MatchMessageHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Network/MessageHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Mask.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/Compiled-Standard.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ScrollSnapRect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -262,11 +410,6 @@
             <path>
               <item name="Project" type="e068e287:UnityExplorerRootNode" />
               <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
-              <item name="Scenes" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
               <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
             </path>
             <path>
@@ -298,6 +441,11 @@
               <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
               <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
               <item name="UI" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Shaders" type="1045f7f1:UnityExplorerNode" />
             </path>
           </expand>
           <select />
@@ -360,7 +508,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5564000" />
+    <option name="totallyTimeSpent" value="5576000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,18 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <marker date="1555829547121" expanded="false" signature="6:140" ph="..." />
-            <marker date="1555829547121" expanded="true" signature="185:1443" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="292:762" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="436:546" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="585:673" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="686:756" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="808:1441" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="838:1435" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="960:1128" ph="{...}" />
-            <marker date="1555829547121" expanded="true" signature="1263:1402" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -446,7 +582,6 @@
           <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
             <marker date="1555741430211" expanded="false" signature="6:152" ph="..." />
-            <marker date="1555741430211" expanded="true" signature="196:2279" ph="{...}" />
             <marker date="1555741430211" expanded="true" signature="423:681" ph="{...}" />
             <marker date="1555741430211" expanded="true" signature="727:2277" ph="{...}" />
             <marker date="1555741430211" expanded="true" signature="757:2271" ph="{...}" />
@@ -457,7 +592,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Network/MainTCPConnection.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="-34">
           <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
           <folding>
             <marker date="1555741430386" expanded="false" signature="6:316" ph="..." />
@@ -565,28 +700,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Shaders/Mask.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
-          <folding>
-            <marker date="1555834267248" expanded="true" signature="105:1457" ph="{...}" />
-            <marker date="1555834267248" expanded="true" signature="118:163" ph="{...}" />
-            <marker date="1555834267248" expanded="true" signature="174:1455" ph="{...}" />
-            <marker date="1555834267248" expanded="true" signature="273:1453" ph="{...}" />
-            <marker date="1555834267248" expanded="true" signature="292:1442" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Shaders/Mask.shader" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/EventManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
           <folding>
-            <marker date="1555741430636" expanded="false" signature="6:113" ph="..." />
-            <marker date="1555741430636" expanded="true" signature="156:276" ph="{...}" />
-            <marker date="1555741430636" expanded="true" signature="227:274" ph="{...}" />
+            <marker date="1555838278988" expanded="false" signature="6:113" ph="..." />
+            <marker date="1555838278988" expanded="true" signature="156:291" ph="{...}" />
+            <marker date="1555838278988" expanded="true" signature="231:289" ph="{...}" />
           </folding>
         </state>
       </provider>
