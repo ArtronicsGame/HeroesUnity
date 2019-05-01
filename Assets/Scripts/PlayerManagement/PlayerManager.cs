@@ -27,9 +27,7 @@ public class PlayerManager : EventBehaviour
         }
         else
         {
-            // register
             manage.Register();
-            // _messageHandler.NewPlayer("Soroush");
         }
     }
 
