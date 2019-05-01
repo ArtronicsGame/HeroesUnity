@@ -41,7 +41,7 @@
             sampler2D _Texture;
             
             v2f vert(appdata IN){
-                v2f OUT;                
+                v2f OUT;
                 
                 OUT.worldPos = mul (unity_ObjectToWorld, IN.vertex);
                 OUT.position = UnityObjectToClipPos(IN.vertex);

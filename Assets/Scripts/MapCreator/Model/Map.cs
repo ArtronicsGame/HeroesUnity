@@ -47,6 +47,7 @@ namespace MapCreator.Model
     public class Body
     {
         [JsonProperty("Dynamic")] public bool Dynamic { get; set; }
+        [JsonProperty("Bullet")] public bool Bullet { get; set; }
         [JsonProperty("Name")] public string Name { get; set; }
         [JsonProperty("Type")] public string Type { get; set; }
         [JsonProperty("Position")] public Vec2 Position { get; set; }
@@ -58,6 +59,7 @@ namespace MapCreator.Model
         public Body(ExtraData extraData, string name, float x, float y, float angle)
         {
             Dynamic = extraData.dynamic;
+            Bullet = extraData.bullet;
             Name = name;
             Type = extraData.type;
             Position = new Vec2(x, y);

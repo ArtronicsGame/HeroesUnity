@@ -60,7 +60,7 @@ public class MatchHandler : EventBehaviour
                 break;
             case "MatchEnd":
                 Debug.Log("Match Ended");
-                SceneManager.LoadScene(0, LoadSceneMode.Single);
+                SceneManager.LoadScene("MenuScene");
                 break;
         }
     }
