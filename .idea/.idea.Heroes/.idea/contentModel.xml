@@ -28,6 +28,7 @@
         </e>
         <e p="Maps" t="Include">
           <e p="Map1.txt" t="Include" />
+          <e p="Tank.txt" t="Include" />
         </e>
         <e p="Rotary Heart" t="Include">
           <e p="SerializableDictionary" t="Include">
@@ -67,6 +68,7 @@
             <e p="PrefabMap.cs" t="Include" />
           </e>
           <e p="MatchHandler" t="Include">
+            <e p="HealthManager.cs" t="Include" />
             <e p="MatchHandler.cs" t="Include" />
           </e>
           <e p="Model" t="Include">

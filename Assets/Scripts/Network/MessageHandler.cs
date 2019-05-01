@@ -7,11 +7,18 @@ using Event = EventSystem.Model.Event;
 
 public class MessageHandler : MonoBehaviour
 {
+    public static MessageHandler i;
+    
     public PlayerInfo playerInfo;
     public MovementData movementData;
 
     private MainTCPConnection _mainTcp;
 
+    private void Awake()
+    {
+        i = this;
+    }
+    
     void Start()
     {
         _mainTcp = GetComponentInParent<MainTCPConnection>();

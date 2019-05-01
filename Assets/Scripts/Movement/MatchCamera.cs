@@ -23,8 +23,12 @@ public class MatchCamera : MonoBehaviour
                 Mathf.Abs(delta.y) > yError)
             {
                 var position = target.position;
-                float xTarget = delta.x > 0 ? position.x - xError : position.x + xError;
-                float yTarget = delta.y > 0 ? position.y - yError : position.y + yError;
+                float xTarget = transform.position.x, yTarget = transform.position.y;
+                
+                if(Mathf.Abs(delta.x) > xError)
+                    xTarget = delta.x > 0 ? position.x - xError : position.x + xError;
+                if(Mathf.Abs(delta.y) > yError)
+                    yTarget = delta.y > 0 ? position.y - yError : position.y + yError;
                 Vector2 targetPosition = new Vector2(xTarget, yTarget);
                 
                 Camera cam = Camera.main;
