@@ -20,7 +20,9 @@ public class PlayerManager : EventBehaviour
             _messageHandler = connectionManager.GetComponentInChildren<MessageHandler>();
         }
 
-        PlayerPrefs.SetString("id", "5ca5ac747824b4087e86b4e0");
+//        PlayerPrefs.SetString("id", "5ca5ac747824b4087e86b4e0");
+        PlayerPrefs.DeleteAll();
+        
         if (PlayerPrefs.HasKey("id"))
         {
             _messageHandler.GetPlayer(PlayerPrefs.GetString("id"));
@@ -29,7 +31,6 @@ public class PlayerManager : EventBehaviour
         {
             // register
             manage.Register();
-            // _messageHandler.NewPlayer("Soroush");
         }
     }
 
@@ -38,7 +39,12 @@ public class PlayerManager : EventBehaviour
         switch (e.Type)
         {
             case "NewPlayerResp":
-                if ((Status)int.Parse(e.Info["status"]) == Status.STATUS_OK)
+                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_DUPLICATE)
+                {
+                    
+                }
+
+                else if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {
                     PlayerPrefs.SetString("id", e.Info["userId"]);
                     _messageHandler.GetPlayer(e.Info["userId"]);

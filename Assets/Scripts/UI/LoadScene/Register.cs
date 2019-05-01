@@ -7,10 +7,19 @@ public class Register : MonoBehaviour
 {
     public InputField inputField;
     private MessageHandler _messageHandler;
-
+    private Manage _manage;
+    
     public void RegisterPlayer()
     {
-        print(inputField.text);
-        // _messageHandler.NewPlayer(inputField.text);
+        var connectionManager = GameObject.Find("ConnectionManager");
+
+        if (connectionManager != null)
+        {
+            _messageHandler = connectionManager.GetComponentInChildren<MessageHandler>();
+        }
+        
+        _messageHandler.NewPlayer(inputField.text);
+        
+        _manage.Registercont();
     }
 }
