@@ -13,7 +13,7 @@ public class Manage : MonoBehaviour
         register.SetActive(true);
     }
     
-    public void Registercont()
+    public void RegisterCont()
     {
         loadInfo.SetActive(true);
         register.SetActive(false);

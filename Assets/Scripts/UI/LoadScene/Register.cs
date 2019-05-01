@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Event = EventSystem.Model.Event;
 
-public class Register : MonoBehaviour
+public class Register : EventBehaviour
 {
     public InputField inputField;
     private MessageHandler _messageHandler;
@@ -20,6 +21,29 @@ public class Register : MonoBehaviour
         
         _messageHandler.NewPlayer(inputField.text);
         
-        _manage.Registercont();
+//        _manage.RegisterCont();
+    }
+
+    protected override void OnEvent(Event e)
+    {
+        switch (e.Type)
+        {
+            case "NewPlayerResp":
+            {
+                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_DUPLICATE)
+                {
+                    gameObject.GetComponent<InputField>().text = "";
+                    gameObject.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Duplicate Entry";
+                }
+            }
+                break;
+        }
+    }
+
+    private IEnumerator duplicateMsg()
+    {
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Enter your username";
+
     }
 }

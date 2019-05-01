@@ -32,19 +32,14 @@ public class PlayerManager : EventBehaviour
             // register
             manage.Register();
         }
-    }
+    }    
 
     protected override void OnEvent(Event e)
     {
         switch (e.Type)
         {
             case "NewPlayerResp":
-                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_DUPLICATE)
-                {
-                    
-                }
-
-                else if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
+                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {
                     PlayerPrefs.SetString("id", e.Info["userId"]);
                     _messageHandler.GetPlayer(e.Info["userId"]);
