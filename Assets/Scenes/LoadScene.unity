@@ -1026,7 +1026,7 @@ MonoBehaviour:
     - NewPlayerResp
     - GetPlayerResp
     _values:
-    - {fileID: 26999928}
+    - {fileID: 1190750292}
     - {fileID: 26999928}
 --- !u!1 &1595126476
 GameObject:

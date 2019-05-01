@@ -21,7 +21,7 @@ public class PlayerManager : EventBehaviour
         }
 
 //        PlayerPrefs.SetString("id", "5ca5ac747824b4087e86b4e0");
-        PlayerPrefs.DeleteAll();
+//        PlayerPrefs.DeleteAll();
         
         if (PlayerPrefs.HasKey("id"))
         {
@@ -38,13 +38,7 @@ public class PlayerManager : EventBehaviour
     {
         switch (e.Type)
         {
-            case "NewPlayerResp":
-                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
-                {
-                    PlayerPrefs.SetString("id", e.Info["userId"]);
-                    _messageHandler.GetPlayer(e.Info["userId"]);
-                }
-                break;
+            
             case "GetPlayerResp":
                 if ((Status)int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {

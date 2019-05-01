@@ -101,10 +101,18 @@
           </e>
           <e p="UI" t="Include">
             <e p="EventManager.cs" t="Include" />
+            <e p="LoadScene" t="Include">
+              <e p="LoadInfo.cs" t="Include" />
+              <e p="Manage.cs" t="Include" />
+              <e p="Register.cs" t="Include" />
+            </e>
             <e p="ScrollSnapRect.cs" t="Include" />
             <e p="ShopSceneControl.cs" t="Include" />
             <e p="UIControl.cs" t="Include" />
           </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="SelectionShader.shader" t="Include" />
         </e>
       </e>
       <e p="Heroes.sln" t="IncludeFlat" />
