@@ -19,8 +19,10 @@ public class PlayerManager : EventBehaviour
         {
             _messageHandler = connectionManager.GetComponentInChildren<MessageHandler>();
         }
+
+//        PlayerPrefs.SetString("id", "5ca5ac747824b4087e86b4e0");
+//        PlayerPrefs.DeleteAll();
         
-        PlayerPrefs.SetString("id", "5c9390a46080ef4b873f0fba");
         if (PlayerPrefs.HasKey("id"))
         {
             _messageHandler.GetPlayer(PlayerPrefs.GetString("id"));
@@ -29,19 +31,13 @@ public class PlayerManager : EventBehaviour
         {
             manage.Register();
         }
-    }
+    }    
 
     protected override void OnEvent(Event e)
     {
         switch (e.Type)
         {
-            case "NewPlayerResp":
-                if ((Status)int.Parse(e.Info["status"]) == Status.STATUS_OK)
-                {
-                    PlayerPrefs.SetString("id", e.Info["userId"]);
-                    _messageHandler.GetPlayer(e.Info["userId"]);
-                }
-                break;
+            
             case "GetPlayerResp":
                 if ((Status)int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {
