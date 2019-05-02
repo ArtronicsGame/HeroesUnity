@@ -8,6 +8,10 @@ public class InfoUpdater : MonoBehaviour
     public PlayerInfo playerInfo;
     private void Start()
     {
+        GameObject.Find("Name").GetComponentInChildren<Text>().text = playerInfo.PlayerData.Username;
+        
+        GameObject.Find("Info").GetComponentInChildren<Text>().text = (playerInfo.PlayerData.Experience.ToString())+"XP";
+            
         GameObject.Find("Coins").GetComponentInChildren<Text>().text = playerInfo.PlayerData.Coins.ToString();
         
         GameObject.Find("Trophies").GetComponentInChildren<Text>().text = playerInfo.PlayerData.Trophies.ToString();
