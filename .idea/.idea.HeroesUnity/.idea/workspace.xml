@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3589c68d-3fb7-487f-8e01-fe20998527ac" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManagement/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManagement/PlayerManager.cs" afterDir="false" />
 =======
@@ -13,6 +14,10 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoadScene/Register.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoadScene/Register.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
 >>>>>>> UI
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HeroesUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeroesUnity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MenuScene/InfoUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuScene/InfoUpdater.cs" afterDir="false" />
+>>>>>>> parent of e22f288... Aspect ratio changed to 16:9
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +27,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
 <<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="true">
+>>>>>>> parent of e22f288... Aspect ratio changed to 16:9
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/MenuScene/InfoUpdater.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -34,27 +43,6 @@
                 <marker date="1556755853519" expanded="true" signature="203:698" ph="{...}" />
                 <marker date="1556755853519" expanded="true" signature="725:820" ph="{...}" />
                 <marker date="1556755853519" expanded="true" signature="853:1401" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManagement/PlayerManager.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-              <folding>
-                <marker date="1556757280011" expanded="true" signature="6:140" ph="..." />
-                <marker date="1556757280011" expanded="true" signature="185:1517" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="313:838" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="458:568" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="680:768" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="781:832" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="884:1515" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="914:1509" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="1035:1203" ph="{...}" />
-                <marker date="1556757280011" expanded="true" signature="1337:1476" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -72,6 +60,29 @@
                 <marker date="1555581026650" expanded="true" signature="354:944" ph="{...}" />
                 <marker date="1555581026650" expanded="true" signature="967:1196" ph="{...}" />
                 <marker date="1555581026650" expanded="true" signature="1220:1380" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Network/MatchMessageHandler.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+              <folding>
+                <marker date="1556747042786" expanded="false" signature="6:166" ph="..." />
+                <marker date="1556747042786" expanded="true" signature="216:2031" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="442:472" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="490:768" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="597:762" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="796:1046" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="916:972" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="1078:1364" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="1389:1525" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="1557:1814" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="1683:1740" ph="{...}" />
+                <marker date="1556747042786" expanded="true" signature="1846:2029" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -256,12 +267,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Network/MatchMessageHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Mask.shader" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuScene/InfoUpdater.cs" />
 =======
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoadScene/Manage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoadScene/Register.cs" />
 >>>>>>> UI
+=======
+>>>>>>> parent of e22f288... Aspect ratio changed to 16:9
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManagement/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuScene/InfoUpdater.cs" />
       </list>
     </option>
   </component>
@@ -402,20 +417,28 @@
       <workItem from="1555834065405" duration="889000" />
 <<<<<<< HEAD
       <workItem from="1556747481902" duration="3781000" />
+<<<<<<< HEAD
       <workItem from="1556755578159" duration="748000" />
 =======
       <workItem from="1556702088557" duration="1524000" />
       <workItem from="1556705758183" duration="2003000" />
 >>>>>>> UI
+=======
+      <workItem from="1556755578159" duration="317000" />
+>>>>>>> parent of e22f288... Aspect ratio changed to 16:9
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="10731000" />
 =======
     <option name="totallyTimeSpent" value="10274000" />
 >>>>>>> UI
+=======
+    <option name="totallyTimeSpent" value="10300000" />
+>>>>>>> parent of e22f288... Aspect ratio changed to 16:9
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -561,6 +584,25 @@
             <marker date="1555857101671" expanded="true" signature="11311:11774" ph="{...}" />
             <marker date="1555857101671" expanded="true" signature="11337:11647" ph="{...}" />
             <marker date="1555857101671" expanded="true" signature="11691:11758" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManagement/PlayerManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <marker date="1556749130416" expanded="true" signature="6:140" ph="..." />
+            <marker date="1556749130416" expanded="true" signature="185:1509" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="313:830" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="458:568" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="672:760" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="773:824" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="876:1507" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="906:1501" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="1027:1195" ph="{...}" />
+            <marker date="1556749130416" expanded="true" signature="1329:1468" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -904,6 +946,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/LoadScene/Register.cs">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -937,5 +980,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> parent of e22f288... Aspect ratio changed to 16:9
   </component>
 </project>
