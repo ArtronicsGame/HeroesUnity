@@ -19,8 +19,8 @@ public class PlayerManager : EventBehaviour
         {
             _messageHandler = connectionManager.GetComponentInChildren<MessageHandler>();
         }
-
-        PlayerPrefs.SetString("id", "5ca5ac747824b4087e86b4e0");
+        
+        PlayerPrefs.SetString("id", "5c9390a46080ef4b873f0fba");
         if (PlayerPrefs.HasKey("id"))
         {
             _messageHandler.GetPlayer(PlayerPrefs.GetString("id"));
