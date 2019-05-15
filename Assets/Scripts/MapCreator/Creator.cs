@@ -30,6 +30,10 @@ public class Creator : EventBehaviour
                     Camera.main.GetComponent<MatchCamera>().target = element.transform;
                 }
                 break;
+            case "DelItem":
+                string id = e.Info["id"];
+                Destroy(GameObject.Find(id));
+                break;
         }
     }
 }

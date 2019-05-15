@@ -27,24 +27,19 @@ public class Register : EventBehaviour
 
     protected override void OnEvent(Event e)
     {
-        switch (e.Type)
+        if (e.Type != "NewPlayerResp") return;
+        switch ((Status) int.Parse(e.Info["status"]))
         {
-            case "NewPlayerResp":
-                if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_DUPLICATE)
-                {
-                    gameObject.GetComponent<InputField>().text = "";
-                    gameObject.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Duplicate Entry";
-                    StartCoroutine(DuplicateMsg());
-                }
-
-                else if ((Status) int.Parse(e.Info["status"]) == Status.STATUS_OK)
-                {
-                    Debug.Log("Reached OK");
-                    PlayerPrefs.SetString("id", e.Info["userId"]);
-                    _messageHandler.GetPlayer(e.Info["userId"]);
-                    _manage.RegisterCont();
-                }
-
+            case Status.STATUS_DUPLICATE:
+                gameObject.GetComponent<InputField>().text = "";
+                gameObject.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Duplicate Entry";
+                StartCoroutine(DuplicateMsg());
+                break;
+            case Status.STATUS_OK:
+                Debug.Log("Reached OK");
+                PlayerPrefs.SetString("id", e.Info["userId"]);
+                _messageHandler.GetPlayer(e.Info["userId"]);
+                _manage.RegisterCont();
                 break;
         }
     }

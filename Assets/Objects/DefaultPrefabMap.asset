@@ -40,13 +40,19 @@ MonoBehaviour:
     - Ground
     - Tree
     - Wizard
+    - Bullet
+    - Tank
     _keys:
     - Crate
     - Ground
     - Tree
     - Wizard
+    - Bullet
+    - Tank
     _values:
     - {fileID: 4958917668544149011, guid: 6fa0018c69d13ba4ea02c16a6d0bbb73, type: 3}
     - {fileID: 2741673766595820466, guid: 02282e604637f4d4f885591f24a4a627, type: 3}
     - {fileID: 4571023798967728058, guid: 745e0d16b274ad249a7586ee1578d0a8, type: 3}
     - {fileID: 8935330153158199641, guid: cf9dc980d5b3c4c4788f69b7b38f8244, type: 3}
+    - {fileID: 6921641707374208086, guid: 291fc9126fcab614b90918e7bce1ed87, type: 3}
+    - {fileID: 2282897870722232042, guid: 1f388587b1fde0241836b2ebd5118f26, type: 3}

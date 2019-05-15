@@ -1,0 +1,1 @@
+{"Dynamic":true,"Bullet":false,"Name":"Tank","Type":"Tank","Position":{"X":5.130123,"Y":6.31228542},"Angle":0.0,"Polygons":[{"Nodes":[{"X":5.33951759,"Y":-0.2635603},{"X":4.24852562,"Y":-0.2842369},{"X":4.297701,"Y":0.5549121},{"X":5.35681438,"Y":0.5549121}]}],"Circles":[{"Position":{"X":0.0,"Y":0.0},"Radius":4.4}],"Chains":[]}

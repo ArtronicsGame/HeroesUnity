@@ -18,7 +18,7 @@ public class LoadInfo : MonoBehaviour
 
         while (progress.fillAmount < 1)
         {
-            progress.fillAmount += Time.deltaTime / 10;
+            progress.fillAmount += Time.deltaTime / 2;
 
             yield return null;
         }

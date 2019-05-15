@@ -52,6 +52,14 @@ public class MatchMessageHandler : MonoBehaviour
         return _matchUdp.SendData(packet.Encode());
     }
 
+    public bool Shoot()
+    {
+        UDPPacket packet = new UDPPacket();
+        packet.type = 'S';
+
+        return _matchUdp.SendData(packet.Encode());
+    }
+
     public bool TCPHandshake()
     {
         Event e = new Event();

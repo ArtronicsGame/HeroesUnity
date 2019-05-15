@@ -29,7 +29,6 @@ public class PlayerManager : EventBehaviour
         }
         else
         {
-            // register
             manage.Register();
         }
     }    
@@ -38,7 +37,6 @@ public class PlayerManager : EventBehaviour
     {
         switch (e.Type)
         {
-            
             case "GetPlayerResp":
                 if ((Status)int.Parse(e.Info["status"]) == Status.STATUS_OK)
                 {

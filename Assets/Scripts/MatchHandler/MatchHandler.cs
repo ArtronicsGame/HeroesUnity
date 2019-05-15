@@ -57,10 +57,16 @@ public class MatchHandler : EventBehaviour
                 break;
             case "HeroID":
                 PlayerInfo.HeroName = e.Info["HeroID"];
+                GameObject hero = GameObject.Find(PlayerInfo.HeroName);
+                if (hero != null)
+                {
+                    Camera.main.GetComponent<MatchCamera>().target = hero.transform;
+                }
                 break;
             case "MatchEnd":
+                MessageHandler.i.GetPlayer(PlayerPrefs.GetString("id"));
                 Debug.Log("Match Ended");
-                SceneManager.LoadScene(0, LoadSceneMode.Single);
+                SceneManager.LoadScene("MenuScene");
                 break;
         }
     }

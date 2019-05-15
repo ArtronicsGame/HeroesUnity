@@ -8,13 +8,21 @@ public class Joystick : MonoBehaviour
 {
     public MovementData movementData;
     public GameObject joyStickPrefab;
+    
     [Range(1.0f, 10.0f)] public float joyStickRange = 3.0f;
+    [Range(0.0f, 1.0f)] public float actionRangeRatio = 0.25f;
+    [Range(0.0f, 5.0f)] public float attackDelay = 1;
+
 
     private Vector2 _center;
     private GameObject _joyStick = null;
     private bool _joyStickFlag = false;
     private int _move = -1;
-    private bool _attack;
+    private int _attack = -1;
+
+    private Vector2 _acenter;
+    private bool _normalAttack = true;
+    private float _attackRem = 0;
 
     void HandleMovement(Touch touch)
     {
@@ -69,12 +77,39 @@ public class Joystick : MonoBehaviour
             Vector2 pos = touch.position;
             if (touch.phase == TouchPhase.Began && !_joyStickFlag)
             {
+                Debug.Log("First");
+                _attack = touch.fingerId;
+                _acenter = pos;
+                _normalAttack = true;
+                _attackRem = attackDelay;
+
             }
             else if (touch.phase == TouchPhase.Moved && _joyStickFlag)
             {
+                Debug.Log("Second");
+                if (Mathf.Abs(pos.y - _acenter.y) >= actionRangeRatio * Screen.height)
+                {
+                    _normalAttack = false;
+                    if (pos.y - _acenter.y > 0)
+                    {
+                        //Use Item 1
+                    }
+                    else
+                    {
+                        //Use Item 2
+                    }
+                }
+                else
+                {
+                    if (!_normalAttack)
+                        _attackRem = attackDelay;
+                    _normalAttack = true;
+                }
             }
             else if (touch.phase == TouchPhase.Ended && _joyStickFlag)
             {
+                _attack = -1;
+                _normalAttack = true;
             }
         }
         catch (NullReferenceException)
@@ -83,12 +118,9 @@ public class Joystick : MonoBehaviour
         }
     }
 
-
-    void Update()
+    void CheckInput()
     {
-        _attack = false;
-
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         Touch temp = new Touch();
         temp.position = Input.mousePosition;
         if (Input.GetMouseButtonDown(0))
@@ -106,7 +138,7 @@ public class Joystick : MonoBehaviour
             temp.phase = TouchPhase.Moved;
             HandleMovement(temp);
         }
-#endif
+        #endif
 
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -118,10 +150,38 @@ public class Joystick : MonoBehaviour
             {
                 HandleMovement(Input.GetTouch(i));
             }
-            else if (Input.GetTouch(i).position.x > (Screen.width / 2) && !_attack)
+            
+            if (Input.GetTouch(i).position.x >= (Screen.width / 2) && _attack == -1)
             {
                 HandleAction(Input.GetTouch(i));
             }
+        }
+    }
+
+    void Update()
+    {
+        CheckInput();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Shoot
+            MatchMessageHandler.i.Shoot();
+        }
+        
+    }
+
+    IEnumerator OnAttackCheck()
+    {
+        WaitForSeconds delay = new WaitForSeconds(0.05f);
+        while (true)
+        {
+            if (_normalAttack && _attackRem < 0)
+            {
+                //Normal Attack
+
+            }
+            
+            _attackRem -= 0.05f;
+            yield return delay;
         }
     }
 
