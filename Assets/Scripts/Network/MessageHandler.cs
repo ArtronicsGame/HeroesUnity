@@ -24,6 +24,22 @@ public class MessageHandler : MonoBehaviour
         _mainTcp = GetComponentInParent<MainTCPConnection>();
     }
 
+
+    public bool BuyItems(string item)
+    {
+        var e = new Event {Type = "ShopController.buy"};
+        Debug.Log(JsonConvert.SerializeObject(e));
+        return _mainTcp.SendData(JsonConvert.SerializeObject(e));
+    }
+
+    public bool GetAllItems()
+    {
+        var e = new Event {Type = "ShopController.getAllItems",Info = new Dictionary<string, string>() {{"_id", "null"}}};
+
+        Debug.Log(JsonConvert.SerializeObject(e));
+        return _mainTcp.SendData(JsonConvert.SerializeObject(e));
+    }
+    
     public bool NewPlayer(string username)
     {
         Event e = new Event();
@@ -38,12 +54,7 @@ public class MessageHandler : MonoBehaviour
 
     public bool GetPlayer(string id)
     {
-        Event e = new Event();
-        e.Type = "PlayerController.get";
-        e.Info = new Dictionary<string, string>()
-        {
-            {"_id", id}
-        };
+        Event e = new Event {Type = "PlayerController.get", Info = new Dictionary<string, string>() {{"_id", id}}};
         Debug.Log(JsonConvert.SerializeObject(e));
         return _mainTcp.SendData(JsonConvert.SerializeObject(e));
     }
