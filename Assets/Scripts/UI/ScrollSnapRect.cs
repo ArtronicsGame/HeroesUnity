@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Image))]
 [RequireComponent(typeof(Mask))]
@@ -39,7 +40,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     
     // number of pages in container
     private int _pageCount;
-    public int _currentPage;
+    private int _selectedHero;
 
     // whether lerping is in progress and target lerp position
     private bool _lerp;
@@ -167,7 +168,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     private void SetPage(int aPageIndex) {
         aPageIndex = Mathf.Clamp(aPageIndex, 0, _pageCount - 1);
         _container.anchoredPosition = _pagePositions[aPageIndex];
-        _currentPage = aPageIndex;
+        _selectedHero = aPageIndex;
     }
 
     //------------------------------------------------------------------------
@@ -175,7 +176,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         aPageIndex = Mathf.Clamp(aPageIndex, 0, _pageCount - 1);
         _lerpTo = _pagePositions[aPageIndex];
         _lerp = true;
-        _currentPage = aPageIndex;
+        _selectedHero = aPageIndex;
     }
 
     //------------------------------------------------------------------------
@@ -225,12 +226,12 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
     //------------------------------------------------------------------------
     private void NextScreen() {
-        LerpToPage(_currentPage + 1);
+        LerpToPage(_selectedHero + 1);
     }
 
     //------------------------------------------------------------------------
     private void PreviousScreen() {
-        LerpToPage(_currentPage - 1);
+        LerpToPage(_selectedHero - 1);
     }
 
     //------------------------------------------------------------------------
@@ -239,7 +240,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         Vector2 currentPosition = _container.anchoredPosition;
 
         float distance = float.MaxValue;
-        int nearestPage = _currentPage;
+        int nearestPage = _selectedHero;
 
         for (int i = 0; i < _pagePositions.Count; i++) {
             float testDist = Vector2.SqrMagnitude(currentPosition - _pagePositions[i]);
@@ -302,4 +303,6 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
             }
         }
     }
+
+    public int GetSelectedHero => _selectedHero;
 }
