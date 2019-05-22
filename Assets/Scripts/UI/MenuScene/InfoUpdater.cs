@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class InfoUpdater : MonoBehaviour
 {
     public PlayerInfo playerInfo;
+
+
     private void Start()
     {
         GameObject.Find("Name").GetComponentInChildren<Text>().text = playerInfo.PlayerData.Username;
@@ -15,6 +17,20 @@ public class InfoUpdater : MonoBehaviour
         GameObject.Find("Coins").GetComponentInChildren<Text>().text = playerInfo.PlayerData.Coins.ToString();
         
         GameObject.Find("Trophies").GetComponentInChildren<Text>().text = playerInfo.PlayerData.Trophies.ToString();
+        
+        GetHeroesInfo();
+    }
+
+
+    private void GetHeroesInfo()
+    {
+        foreach (var hero in playerInfo.PlayerData.HeroProperties.Values)
+        {
+            if (hero.IsUnlocked)
+            {
+                
+            }
+        }   
     }
 
 //    private void Update()

@@ -18,7 +18,7 @@ public abstract class EventBehaviour : MonoBehaviour
         StartCoroutine(QueueCheck());
     }
 
-    IEnumerator QueueCheck()
+    private IEnumerator QueueCheck()
     {
         while (true)
         {

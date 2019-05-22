@@ -21,8 +21,6 @@ public class Register : EventBehaviour
         }
 
         _messageHandler.NewPlayer(inputField.text);
-
-        
     }
 
     protected override void OnEvent(Event e)

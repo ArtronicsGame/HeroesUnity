@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Event = EventSystem.Model.Event;
@@ -7,20 +8,17 @@ public class ShopSceneControl : EventBehaviour
 {
     public Button button;
     public GameObject[] panels;
-    private int numberOfItems;
-
-    private struct ItemDetail
-    {
-        public string Name;
-        public int Price;
-    }
-    private ItemDetail itemDetail;
+    private string chestInfo;
     private MessageHandler _messageHandler;
     private Manage _manage;
+    private ResponseAnalyzer _responseAnalyzer;
 
     private void Awake()
     {
         var connectionManager = GameObject.Find("ConnectionManager");
+        _responseAnalyzer = FindObjectOfType<ResponseAnalyzer>();
+
+        _responseAnalyzer.map.Add("ShopController", this);
 
         if (connectionManager != null)
         {
@@ -28,26 +26,23 @@ public class ShopSceneControl : EventBehaviour
         }
 
         _messageHandler.GetAllItems();
-        
     }
-    
-    private void Start()
+
+    private void MakeChest()
     {
         foreach (var panel in panels)
         {
-            for (var i = 0; i < numberOfItems; i++)
+            for (var i = 0; i < 2; i++)
             {
                 var b = Instantiate(button);
                 b.GetComponentInChildren<Text>().text = i.ToString();
-                b.GetComponent<ItemBtn>().Name = itemDetail.Name;
-                b.GetComponent<ItemBtn>().Price = itemDetail.Price;
                 b.transform.SetParent(panel.transform);
+                b.transform.localScale = Vector3.one;
             }
         }
 
         panels[0].transform.parent.GetComponent<ScrollRect>().normalizedPosition = Vector2.zero;
         panels[1].transform.parent.GetComponent<ScrollRect>().normalizedPosition = Vector2.zero;
-
     }
 
     protected override void OnEvent(Event e)
@@ -56,9 +51,18 @@ public class ShopSceneControl : EventBehaviour
         {
             case Status.STATUS_OK:
                 Debug.Log("Reached OK");
-                numberOfItems = Convert.ToInt32(e.Info["count"]);
+                print(e.Info["response"]);
+//                print("type: "+e.Info["type"] + " price: " + e.Info["price"]);
+                foreach (KeyValuePair<string, string> k in e.Info)
+                {
+                    print("key " + k.Key + " value: " + k.Value);
+                }
+
+                MakeChest();
+                break;
+            case Status.STATUS_FAILED:
+                Debug.Log("Failed");
                 break;
         }
-        print(numberOfItems);
     }
 }
